@@ -7,7 +7,7 @@ const cron = require('node-cron');
 const { fetchScholarMetrics, getCachedMetrics, getCachedPublications } = require('./services/scholarService');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4800;
 
 // Security middleware
 app.use(helmet({
