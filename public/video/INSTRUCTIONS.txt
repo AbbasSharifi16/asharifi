@@ -1,0 +1,49 @@
+VIDEO FILES NEEDED FOR RESEARCH PAGE
+======================================
+
+The research page is configured to display the following videos with autoplay:
+
+MAIN EXPERIMENTAL SETUP VIDEO:
+- File name: geyser_experimental_setup.mp4
+- Location: Place in this directory (public/video/)
+- Purpose: Background video with transparent overlay showing project overview
+- Recommended size: 1920x1080, under 50MB
+- Will autoplay on page load
+
+GEYSER EXPERIMENT VIDEOS (3 videos):
+1. geyser_video1.mp4 (or geyser_video1.mov)
+   - Cyclic Geyser Eruption - Test 1
+   
+2. geyser_video2.mp4
+   - Violent Geyser Eruption - Test 2
+   
+3. geyser_video3.mp4
+   - High-Speed Capture - Test 3
+
+CURRENT STATUS:
+===============
+✓ Video containers created and styled
+✓ Autoplay configured with proper attributes
+✓ Fallback to lab_image.jpg if videos not found
+✓ Content Security Policy updated to allow video playback
+✓ JavaScript handlers for autoplay and error handling added
+
+WHAT HAPPENS NOW:
+=================
+- Until you add the video files, the lab_image.jpg will show as fallback
+- Once you add the videos, they will automatically play
+- Videos are set to: autoplay, loop, muted, playsinline
+- If autoplay is blocked by browser, videos will show with controls
+
+TO ADD VIDEOS:
+==============
+1. Copy your 4 video files to this directory
+2. Make sure file names match exactly:
+   - geyser_experimental_setup.mp4
+   - geyser_video1.mp4 (or .mov)
+   - geyser_video2.mp4
+   - geyser_video3.mp4
+3. Refresh the research page - videos will play automatically!
+
+NOTE: The server needs to be restarted after adding video files for the first time.
+Use: npm start (or just refresh if using nodemon)
