@@ -1,0 +1,31 @@
+{
+  "name": "abbas-sharifi-website",
+  "version": "1.0.0",
+  "description": "Professional academic website for Abbas Sharifi - PhD in Civil Engineering",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "academic",
+    "website",
+    "portfolio",
+    "research",
+    "civil engineering"
+  ],
+  "author": "Abbas Sharifi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "compression": "^1.7.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

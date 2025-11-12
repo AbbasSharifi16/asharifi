@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Medical Image Processing - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Medical Image Processing using AI and Machine Learning - COVID-19 Detection, Brain Lesion Segmentation, Cancer Diagnosis">
+    <meta name="keywords" content="Medical Image Processing, AI, Machine Learning, CNN, COVID-19, Brain Lesion, Cancer Detection">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link active">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Research Hero -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1 class="research-title">Medical Image Processing & AI</h1>
+                    <p class="research-subtitle">
+                        Advanced Artificial Intelligence and Computational Methods for Medical Diagnostics
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container" style="padding: var(--space-2) var(--space-4) var(--space-16);">
+            
+            <!-- Project Overview Section -->
+            <section style="margin-bottom: var(--space-12);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Project Overview</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <p style="
+                        font-size: 1.125rem;
+                        line-height: 1.8;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--space-6);
+                        text-align: justify;
+                    ">
+                        In this project, we focused on applying advanced artificial intelligence and computational methods 
+                        to solve complex problems in medical diagnostics and biomedical engineering. We utilized various 
+                        machine learning models, particularly Convolutional Neural Networks (CNNs), to analyze diverse 
+                        medical imagery. Our research demonstrated the use of AI for diagnosing COVID-19 from lung X-rays, 
+                        segmenting brain lesions and breast tumors from MRIs and ultrasound, and diagnosing biomechanical 
+                        conditions like fatigue foot. We also explored GEP for gastric cancer analysis and compared advanced 
+                        models like SAM and U-Net, consistently aiming to improve diagnostic accuracy through computational 
+                        intelligence.
+                    </p>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                        margin-bottom: var(--space-8);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        ">
+                            <i class="fas fa-chart-line"></i>
+                            Research Timeline & Achievements (2020–2025)
+                        </h3>
+                        <p style="
+                            font-size: 1.0625rem;
+                            line-height: 1.8;
+                            color: var(--text-secondary);
+                            text-align: justify;
+                        ">
+                            Across several studies (2020–2025), we applied data‑driven techniques to medical diagnosis. 
+                            We used gene‑expression programming and sensitivity analysis to model how factors such as age, 
+                            sex and <em>H. pylori</em> infection affect gastric cancer tumour location and size. During the 
+                            COVID‑19 pandemic we developed CNNs to classify lung X‑ray images, achieving <strong>93.2% accuracy</strong>, 
+                            <strong>96.1% sensitivity</strong> and segmenting infected tissue with <strong>83.8% accuracy</strong>. 
+                            Other projects introduced a quantum‑matched‑filter deep spiking neural network for MRI tumour 
+                            segmentation, diagnosed foot fatigue using CNNs, combined robust PCA and CNNs to localise brain 
+                            lesions, and compared U‑Net and Segment Anything models for breast tumour delineation.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--space-6);
+                        margin-top: var(--space-8);
+                    ">
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-brain" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Deep Learning</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">CNN & Neural Networks</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-x-ray" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Medical Imaging</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">X-ray, MRI & Ultrasound</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-stethoscope" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Disease Diagnosis</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">COVID-19, Cancer & More</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Images Section -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Research Visualization</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                        margin-bottom: var(--space-6);
+                    ">
+                        <div style="text-align: center;">
+                            <img src="/img/gasteric_cancer.png" 
+                                 alt="Gastric Cancer Analysis" 
+                                 style="
+                                    width: 90%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Gastric Cancer Analysis using Gene Expression Programming
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/gene.png" 
+                                 alt="Gene Expression Analysis" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Gene Expression Programming Framework
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/segmentation.jpg" 
+                                 alt="Image Segmentation Results" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Medical Image Segmentation Results
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/unet.jpg" 
+                                 alt="U-Net Architecture Comparison" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                U-Net vs SAM Model Comparison for Breast Tumor Detection
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Research Areas -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Key Research Areas</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--space-6);
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-lungs"></i> COVID-19 Diagnosis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Detection and diagnosis of infected tissue in COVID-19 patients based on lung X-ray 
+                            images using advanced convolutional neural network approaches.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-brain"></i> Brain Lesion Detection
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Detection of brain lesion location in MRI images using convolutional neural networks 
+                            and robust Principal Component Analysis (PCA) techniques.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-ribbon"></i> Breast Tumor Detection
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Comparative analysis of Segment Anything Model (SAM) and U-Net for breast tumor 
+                            detection in ultrasound and mammography images with improved accuracy.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-dna"></i> Cancer Analysis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Application of gene expression programming for analyzing effective parameters in 
+                            gastric cancer tumor size and location with sensitivity analysis.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-walking"></i> Biomechanical Diagnosis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Experimental and numerical diagnosis of fatigue foot using convolutional neural 
+                            networks for biomechanical condition assessment.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-layer-group"></i> Image Segmentation
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Tumor area segmentation of MRI images using optimized quantum matched-filter 
+                            technique and deep spiking neural networks (QAIS-DSNN).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Publications -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Related Publications</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div class="publications-list">
+                        
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Application of Gene Expression Programming and Sensitivity Analyses in Analyzing Effective Parameters in Gastric Cancer Tumor Size and Location</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Dorosti, S., Jafarzadeh Ghoushchi, S., Sobhrakhshankhah, E., Ahmadi, M., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Soft Computing, 24(13), 9943-9964, 2020</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Diagnosis and Detection of Infected Tissue of COVID-19 Patients Based on Lung X-Ray Image Using Convolutional Neural Network Approaches</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Hassantabar, S., Ahmadi, M., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Chaos, Solitons & Fractals, 140, 110170, 2020</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">QAIS‐DSNN: Tumor Area Segmentation of MRI Image with Optimized Quantum Matched‐Filter Technique and Deep Spiking Neural Network</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Ahmadi, M., Sharifi, A., Hassantabar, S., & Enayati, S.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>BioMed Research International, 2021(1), 6653879, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Experimental and Numerical Diagnosis of Fatigue Foot Using Convolutional Neural Network</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Sharifi, A., Ahmadi, M., Mehni, M. A., Jafarzadeh Ghoushchi, S., & Pourasad, Y.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Computer Methods in Biomechanics and Biomedical Engineering, 24(16), 1828-1840, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Detection of Brain Lesion Location in MRI Images Using Convolutional Neural Network and Robust PCA</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Ahmadi, M., Sharifi, A., Jafarian Fard, M., & Soleimani, N.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>International Journal of Neuroscience, 133(1), 55-66, 2023</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Comparative Analysis of Segment Anything Model and U‐Net for Breast Tumor Detection in Ultrasound and Mammography Images</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Ahmadi, M., Nia, M. F., Asgarian, S., Danesh, K., Irankhah, E., Lonbar, A. G., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Computational Intelligence, 41(5), e70145, 2025</em>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

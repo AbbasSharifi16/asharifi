@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Publications - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Publications by Abbas Sharifi in Water Resource Engineering, Storm Sewer Systems, and Computational Fluid Dynamics">
+    <meta name="keywords" content="Publications, Research Papers, Water Resources, CFD, Academic Articles">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link active">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Publications Hero -->
+        <section class="publications-hero">
+            <div class="container">
+                <div class="publications-hero-content">
+                    <h1 class="publications-title">Publications & Research Output</h1>
+                    <p class="publications-subtitle">
+                        Peer-reviewed articles, conference proceedings, and research contributions in water resource engineering, 
+                        computational fluid dynamics, and interdisciplinary studies
+                    </p>
+                    
+                    <div class="publication-stats">
+                        <div class="pub-stat">
+                            <span class="pub-number"><%= scholarMetrics.publications %></span>
+                            <span class="pub-label">Publications</span>
+                        </div>
+                        <div class="pub-stat">
+                            <span class="pub-number"><%= scholarMetrics.citations.toLocaleString() %></span>
+                            <span class="pub-label">Citations</span>
+                        </div>
+                        <div class="pub-stat">
+                            <span class="pub-number"><%= scholarMetrics.hIndex %></span>
+                            <span class="pub-label">H-Index</span>
+                        </div>
+                        <div class="pub-stat">
+                            <span class="pub-number"><%= scholarMetrics.i10Index %></span>
+                            <span class="pub-label">i10-Index</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--space-6); font-size: var(--text-sm); opacity: 0.8;">
+                        <i class="fas fa-sync-alt"></i> Last updated: <%= new Date(scholarMetrics.lastUpdated).toLocaleString() %>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Publication Filters -->
+<section class="publication-filters">
+    <div class="container">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Publications (<%= publications.length %>)</button>
+        </div>
+        
+        <div class="filter-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search publications..." id="publication-search">
+            </div>
+            
+            <div class="year-filter">
+                <select id="year-filter">
+                    <option value="">All Years</option>
+                    <% 
+                    // Get unique years from publications and sort descending
+                    const years = publications && publications.length > 0 
+                        ? [...new Set(publications.map(p => p.year).filter(y => y > 0))].sort((a, b) => b - a)
+                        : [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];
+                    
+                    years.forEach(year => { %>
+                        <option value="<%= year %>"><%= year %></option>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent & Featured Publications -->
+<section class="featured-publications">
+    <div class="container">
+        <h2 class="section-title">Featured Publications</h2>
+        
+        <div class="featured-grid">
+            <% 
+            // Select featured publications automatically
+            if (publications && publications.length > 0) {
+                // Latest: Most recent publication
+                const latest = publications.reduce((prev, current) => 
+                    (current.year > prev.year) ? current : prev
+                );
+                
+                // High Impact: Most cited publication
+                const highImpact = publications.reduce((prev, current) => 
+                    (current.citedBy > prev.citedBy) ? current : prev
+                );
+                
+                // Collaboration: Publication with most authors
+                const collaboration = publications.reduce((prev, current) => {
+                    const prevAuthors = (prev.authors.match(/,/g) || []).length + 1;
+                    const currentAuthors = (current.authors.match(/,/g) || []).length + 1;
+                    return (currentAuthors > prevAuthors) ? current : prev;
+                });
+            %>
+            
+            <!-- Latest Publication -->
+            <div class="featured-publication">
+                <div class="featured-header">
+                    <span class="publication-type latest">Latest</span>
+                    <span class="publication-year"><%= latest.year %></span>
+                </div>
+                <h3><a href="<%= latest.link %>" target="_blank" rel="noopener" style="color: inherit;"><%= latest.title %></a></h3>
+                <p class="authors"><%= latest.authors %></p>
+                <p class="journal"><%= latest.venue %></p>
+                <div class="publication-metrics">
+                    <span class="metric"><i class="fas fa-calendar"></i> <%= latest.year %></span>
+                    <% if (latest.citedBy > 0) { %>
+                        <span class="metric"><i class="fas fa-quote-right"></i> <%= latest.citedBy %> Citations</span>
+                    <% } %>
+                    <span class="metric"><a href="<%= latest.link %>" target="_blank" rel="noopener" style="color: inherit;"><i class="fas fa-external-link-alt"></i> View</a></span>
+                </div>
+            </div>
+            
+            <!-- High Impact Publication -->
+            <div class="featured-publication">
+                <div class="featured-header">
+                    <span class="publication-type high-impact">High Impact</span>
+                    <span class="publication-year"><%= highImpact.year %></span>
+                </div>
+                <h3><a href="<%= highImpact.link %>" target="_blank" rel="noopener" style="color: inherit;"><%= highImpact.title %></a></h3>
+                <p class="authors"><%= highImpact.authors %></p>
+                <p class="journal"><%= highImpact.venue %></p>
+                <div class="publication-metrics">
+                    <span class="metric"><i class="fas fa-calendar"></i> <%= highImpact.year %></span>
+                    <span class="metric"><i class="fas fa-quote-right"></i> <%= highImpact.citedBy %> Citations</span>
+                    <span class="metric"><a href="<%= highImpact.link %>" target="_blank" rel="noopener" style="color: inherit;"><i class="fas fa-external-link-alt"></i> View</a></span>
+                </div>
+            </div>
+            
+            <!-- Collaboration Publication -->
+            <div class="featured-publication">
+                <div class="featured-header">
+                    <span class="publication-type collaboration">Collaboration</span>
+                    <span class="publication-year"><%= collaboration.year %></span>
+                </div>
+                <h3><a href="<%= collaboration.link %>" target="_blank" rel="noopener" style="color: inherit;"><%= collaboration.title %></a></h3>
+                <p class="authors"><%= collaboration.authors %></p>
+                <p class="journal"><%= collaboration.venue %></p>
+                <div class="publication-metrics">
+                    <span class="metric"><i class="fas fa-users"></i> <%= (collaboration.authors.match(/,/g) || []).length + 1 %> Authors</span>
+                    <% if (collaboration.citedBy > 0) { %>
+                        <span class="metric"><i class="fas fa-quote-right"></i> <%= collaboration.citedBy %> Citations</span>
+                    <% } %>
+                    <span class="metric"><a href="<%= collaboration.link %>" target="_blank" rel="noopener" style="color: inherit;"><i class="fas fa-external-link-alt"></i> View</a></span>
+                </div>
+            </div>
+            
+            <% } else { %>
+                <div style="text-align: center; padding: var(--space-16); color: var(--text-secondary); grid-column: 1 / -1;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: var(--space-4);"></i>
+                    <p>Loading featured publications...</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Auto-Fetched Publications from Google Scholar -->
+<section class="all-publications">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-graduation-cap"></i> 
+            Publication List
+        </h2>
+        
+        <% if (publications && publications.length > 0) { %>
+            <div class="publication-category" data-category="all">
+                <div class="publications-list">
+                    <% publications.forEach((pub, index) => { %>
+                        <div class="publication-item" data-year="<%= pub.year %>">
+                            <div class="publication-number"><%= index + 1 %>.</div>
+                            <div class="publication-content">
+                                <h4>
+                                    <a href="<%= pub.link %>" target="_blank" rel="noopener">
+                                        <%= pub.title %>
+                                    </a>
+                                </h4>
+                                <p class="authors"><%= pub.authors %></p>
+                                <% if (pub.venue) { %>
+                                    <p class="journal"><%= pub.venue %></p>
+                                <% } %>
+                                <div class="publication-tags">
+                                    <% if (pub.year) { %>
+                                        <span class="tag primary"><i class="fas fa-calendar"></i> <%= pub.year %></span>
+                                    <% } %>
+                                    <% if (pub.citedBy > 0) { %>
+                                        <span class="tag secondary"><i class="fas fa-quote-right"></i> <%= pub.citedBy %> citations</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        <% } else { %>
+            <div style="text-align: center; padding: var(--space-16); color: var(--text-secondary);">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: var(--space-4);"></i>
+                <p>Loading publications from Google Scholar...</p>
+            </div>
+        <% } %>
+    </div>
+</section>
+
+<!-- Manual Publications Archive (Hidden by default) -->
+<section class="all-publications" style="display: none;">
+    <div class="container">
+        <h2 class="section-title">Complete Publication List</h2>
+        
+        <!-- Published Journal Articles -->
+        <div class="publication-category" data-category="published">
+            <h3 class="category-title">
+                <i class="fas fa-book-open"></i>
+                Published Journal Articles
+                <span class="category-count">(28)</span>
+            </h3>
+            
+            <div class="publications-list">
+                <div class="publication-item" data-year="2025">
+                    <div class="publication-number">1.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Zanje S. R, Mahyawansi P., Leon A. S. (2025) Dynamics of Cyclic and Violent Geyser Eruptions in Storm Sewer Systems: An Experimental and Numerical Approach. Journal of Hydraulic Research</h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">CFD</span>
+                            <span class="tag">Experimental</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">2.</div>
+                    <div class="publication-content">
+                        <h4>Zanje, S. R., Mahyawansi, P., <strong>Sharifi, A.</strong>, Leon, A. S., Petrov, V., & Infimovskiy, Y. Y. (2024). Mechanistic Understanding of Field-Scale Geysers in Stormsewer Systems Using Three-Dimensional Numerical Modeling. Processes, 13(1), 32. <a href="https://www.mdpi.com/2227-9717/13/1/32" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">3D Modeling</span>
+                            <span class="tag">Geysers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">3.</div>
+                    <div class="publication-content">
+                        <h4>Reihanifar, M., Takallou, A., Taheri, M., Lonbar, A. G., Ahmadi, M., & <strong>Sharifi, A.</strong> (2024). Nanotechnology Advancements in Groundwater Remediation: A Comprehensive Analysis of Current Research and Future Prospects. Groundwater for Sustainable Development, 101330. <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352801X24002534" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag secondary">Environmental</span>
+                            <span class="tag">Nanotechnology</span>
+                            <span class="tag">Groundwater</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">4.</div>
+                    <div class="publication-content">
+                        <h4>Leon, A. S., Yin, Z., & <strong>Sharifi, A.</strong> (2024). A finite volume model for maintaining stationarity and reducing spurious oscillations in simulations of sewer system filling and emptying. Journal of Hydraulic Research, 62(3), 267-282. <a href="https://www.tandfonline.com/doi/abs/10.1080/00221686.2024.2341880" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">Numerical Methods</span>
+                            <span class="tag">Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">5.</div>
+                    <div class="publication-content">
+                        <h4>Mahyawansi, P., Zanje, S. R., <strong>Sharifi, A.</strong>, McDaniel, D., & Leon, A. S. (2024). Experimental investigation of storm sewer geyser using a large-scale setup. Physics of Fluids, 36(5). <a href="https://pubs.aip.org/aip/pof/article/36/5/052101/3287801" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">Experimental</span>
+                            <span class="tag">Fluid Dynamics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">6.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Beris, A. T., Javidi, A. S., Nouri, M. S., Lonbar, A. G., & Ahmadi, M. (2024). Application of artificial intelligence in digital twin models for stormwater infrastructure systems in smart cities. Advanced Engineering Informatics, 61, 102485. <a href="https://www.sciencedirect.com/science/article/pii/S1474034624001332" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag ai">AI/ML</span>
+                            <span class="tag">Digital Twin</span>
+                            <span class="tag">Smart Cities</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">7.</div>
+                    <div class="publication-content">
+                        <h4>Ahmadi, M., Gholizadeh Lonbar, A., Nouri, M., Sharifzadeh Javidi, A., Tarlani Beris, A., <strong>Sharifi, A.</strong>, & Salimi-Tarazouj, A. (2024). Supervised multi-regional segmentation machine learning architecture for digital twin applications in coastal regions. Journal of Coastal Conservation, 28, 44. <a href="https://link.springer.com/article/10.1007/s11852-024-01038-1" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag ai">AI/ML</span>
+                            <span class="tag">Image Processing</span>
+                            <span class="tag secondary">Environmental</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-year="2024">
+                    <div class="publication-number">8.</div>
+                    <div class="publication-content">
+                        <h4>Mahyawansi, P., Zanje, S. R., <strong>Sharifi, A.</strong>, McDaniel, D., & Leon, A. S. (2024). Experimental and numerical investigation of a small scale storm sewer geyser. Journal of Hydraulic Research, 62, 25--38. <a href="https://www.tandfonline.com/doi/abs/10.1080/00221686.2024.2305353" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">Experimental</span>
+                            <span class="tag">Numerical</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Continue with more publications... -->
+                <div class="show-more-container">
+                    <button class="show-more-btn" onclick="togglePublications()">
+                        <span class="show-text">Show More Publications</span>
+                        <span class="hide-text" style="display: none;">Show Less</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                
+                <!-- Hidden publications that will be shown on click -->
+                <div class="hidden-publications" style="display: none;">
+                    <!-- Additional publications will be loaded here -->
+                    <div class="publication-item" data-year="2021">
+                        <div class="publication-number">20.</div>
+                        <div class="publication-content">
+                            <h4><strong>Sharifi, A.</strong>, Ahmadi, M., Mehni, M. A., Jafarzadeh Ghoushchi, S., & Pourasad, Y. (2021). Experimental and numerical diagnosis of fatigue foot using convolutional neural network. Computer Methods in Biomechanics and Biomedical Engineering, 24, 1828--1840. <a href="https://www.tandfonline.com/doi/abs/10.1080/10255842.2021.1921164" target="_blank" rel="noopener">Link</a></h4>
+                            <div class="publication-tags">
+                                <span class="tag biomedical">Biomedical</span>
+                                <span class="tag ai">AI/ML</span>
+                                <span class="tag">CNN</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more publications here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Under Review -->
+        <div class="publication-category" data-category="under-review">
+            <h3 class="category-title">
+                <i class="fas fa-clock"></i>
+                Under Review
+                <span class="category-count">(2)</span>
+            </h3>
+            
+            <div class="publications-list">
+                <div class="publication-item under-review" data-year="2024">
+                    <div class="publication-number">1.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Zanje S. R, Mahyawansi P., Leon A. S. (2024) Understanding The Physical Processes in Storm Sewer Geysers Using Experimental and Numerical Time Traces of Superficial Flow Characteristics. Journal of Hydraulic Research</h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">Flow Analysis</span>
+                            <span class="tag review">Under Review</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item under-review" data-year="2024">
+                    <div class="publication-number">2.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Zanje S. R, Mahyawansi P., Leon A. S. (2024) A Retrofitting Solution for Geyser Eruptions in Storm Sewer Systems: Experimental and Numerical Analysis. Journal of Hydraulic Research</h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">Retrofitting</span>
+                            <span class="tag review">Under Review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conference Papers -->
+        <div class="publication-category" data-category="conference">
+            <h3 class="category-title">
+                <i class="fas fa-users"></i>
+                Conference Papers
+                <span class="category-count">(5)</span>
+            </h3>
+            
+            <div class="publications-list">
+                <div class="publication-item conference" data-year="2024">
+                    <div class="publication-number">1.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Zanje, S. R., Mahyawansi, P., & Leon, A. S. Numerical Investigation of the Physical Mechanisms behind Geysers in Storm Sewer Systems: A Slug Analysis Based on a Computational Study of Geyser Eruptions. In World Environmental and Water Resources Congress 2024 (pp. 835-845) <a href="https://ascelibrary.org/doi/abs/10.1061/9780784485477.074" target="_blank" rel="noopener">Link</a></h4>
+                        <div class="publication-tags">
+                            <span class="tag primary">Water Engineering</span>
+                            <span class="tag">EWRI Congress</span>
+                            <span class="tag conference">Conference</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item conference" data-year="2025">
+                    <div class="publication-number">2.</div>
+                    <div class="publication-content">
+                        <h4><strong>Sharifi, A.</strong>, Zanje, S. R., Mahyawansi, P., & Leon, A. S. Real-Time Air-Water Volume Fraction Prediction Using Deep Learning and High-Speed Imaging. In World Environmental and Water Resources Congress 2025.</h4>
+                        <div class="publication-tags">
+                            <span class="tag ai">AI/ML</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag conference">Conference</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Review Activity -->
+<section class="review-activity">
+    <div class="container">
+        <h2 class="section-title">Peer Review & Editorial Activity</h2>
+        
+        <div class="review-stats-grid">
+            <div class="review-stat">
+                <div class="review-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="review-content">
+                    <h3>84 Papers Reviewed</h3>
+                    <p>Across 28 different journals</p>
+                </div>
+            </div>
+            
+            <div class="review-stat">
+                <div class="review-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <div class="review-content">
+                    <h3>6 Editorial Records</h3>
+                    <p>Editorial contributions</p>
+                </div>
+            </div>
+            
+            <div class="review-stat">
+                <div class="review-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="review-content">
+                    <h3>Guest Editor</h3>
+                    <p>Journal of Healthcare Engineering</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-journals">
+            <h3>Top Reviewed Journals</h3>
+            <div class="journals-grid">
+                <div class="journal-item">
+                    <span class="journal-name">Environmental Science and Pollution Research</span>
+                    <span class="review-count">20 papers</span>
+                </div>
+                <div class="journal-item">
+                    <span class="journal-name">Computers in Biology and Medicine</span>
+                    <span class="review-count">16 papers</span>
+                </div>
+                <div class="journal-item">
+                    <span class="journal-name">Science of the Total Environment</span>
+                    <span class="review-count">7 papers</span>
+                </div>
+                <div class="journal-item">
+                    <span class="journal-name">BioMed Research International</span>
+                    <span class="review-count">6 papers</span>
+                </div>
+                <div class="journal-item">
+                    <span class="journal-name">Environmental Research</span>
+                    <span class="review-count">5 papers</span>
+                </div>
+                <div class="journal-item">
+                    <span class="journal-name">Water Resources Management</span>
+                    <span class="review-count">4 papers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Publications Page Styles */
+.publications-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--text-primary);
+    padding: var(--space-20) 0 var(--space-16);
+    margin-top: 70px;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.publications-hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.publications-title {
+    font-family: var(--font-family-secondary);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--primary-color);
+}
+
+.publications-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-12);
+}
+
+.publication-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-6);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.pub-stat {
+    text-align: center;
+    color: white;
+}
+
+.pub-number {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+    color: white;
+}
+
+.pub-label {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.publication-filters {
+    background: var(--background-secondary);
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-tab {
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    background: var(--background-primary);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-weight: 500;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.filter-controls {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    max-width: 300px;
+}
+
+.search-box i {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.search-box input {
+    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-10);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    width: 100%;
+}
+
+.year-filter select {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    background: var(--background-primary);
+}
+
+.featured-publications {
+    padding: var(--space-20) 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-8);
+}
+
+.featured-publication {
+    background: var(--background-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-8);
+    transition: var(--transition-base);
+}
+
+.featured-publication:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+}
+
+.publication-type {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.publication-type.latest {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.publication-type.high-impact {
+    background: var(--primary-color);
+    color: white;
+}
+
+.publication-type.collaboration {
+    background: var(--accent-color);
+    color: var(--text-primary);
+}
+
+.featured-publication h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+}
+
+.authors {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.journal {
+    font-size: var(--text-sm);
+    color: var(--primary-color);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: var(--space-4);
+}
+
+.abstract {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.publication-metrics {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--text-light);
+    background: var(--background-secondary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.all-publications {
+    padding: var(--space-20) 0;
+    background: var(--background-secondary);
+}
+
+.publication-category {
+    margin-bottom: var(--space-16);
+    background: var(--background-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.category-count {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.publication-item {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--background-secondary);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    border-left: 4px solid transparent;
+}
+
+.publication-item:hover {
+    background: var(--background-primary);
+    border-left-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.publication-item.under-review {
+    border-left-color: var(--accent-color);
+}
+
+.publication-item.conference {
+    border-left-color: var(--secondary-color);
+}
+
+.publication-number {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-family-secondary);
+    flex-shrink: 0;
+    width: 40px;
+}
+
+.publication-content {
+    flex: 1;
+}
+
+.publication-content h4 {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.publication-content h4 strong {
+    color: var(--primary-color);
+}
+
+.publication-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.publication-content a:hover {
+    text-decoration: underline;
+}
+
+.publication-tags {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tag.primary {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.tag.secondary {
+    background: #e8f5e8;
+    color: var(--secondary-color);
+}
+
+.tag.ai {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.tag.biomedical {
+    background: #fef3e8;
+    color: #ea580c;
+}
+
+.tag.review {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.tag.conference {
+    background: #e8f5e8;
+    color: var(--secondary-color);
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.show-more-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0 auto;
+}
+
+.show-more-btn:hover {
+    background: var(--primary-dark);
+}
+
+.review-activity {
+    padding: var(--space-20) 0;
+}
+
+.review-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.review-stat {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--background-secondary);
+    border-radius: var(--radius-lg);
+    align-items: center;
+}
+
+.review-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--text-xl);
+}
+
+.review-content h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.review-content p {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.top-journals h3 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+    text-align: center;
+}
+
+.journals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+}
+
+.journal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    background: var(--background-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.journal-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.review-count {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .publications-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .publication-item {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .publication-number {
+        width: auto;
+    }
+    
+    .review-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .journals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .publications-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .publication-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .featured-publication {
+        padding: var(--space-6);
+    }
+    
+    .publication-category {
+        padding: var(--space-6);
+    }
+}
+</style>
+
+<script>
+// Publication filtering functionality
+function togglePublications() {
+    const hiddenPubs = document.querySelector('.hidden-publications');
+    const showBtn = document.querySelector('.show-more-btn');
+    const showText = showBtn.querySelector('.show-text');
+    const hideText = showBtn.querySelector('.hide-text');
+    const icon = showBtn.querySelector('i');
+    
+    if (hiddenPubs.style.display === 'none') {
+        hiddenPubs.style.display = 'block';
+        showText.style.display = 'none';
+        hideText.style.display = 'inline';
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+    } else {
+        hiddenPubs.style.display = 'none';
+        showText.style.display = 'inline';
+        hideText.style.display = 'none';
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+    }
+}
+
+// Filter tabs functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const publicationCategories = document.querySelectorAll('.publication-category');
+    
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            filterTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Show/hide categories based on filter
+            publicationCategories.forEach(category => {
+                const categoryType = category.getAttribute('data-category');
+                if (filter === 'all' || filter === categoryType) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('publication-search');
+    const yearFilter = document.getElementById('year-filter');
+    
+    function filterPublications() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedYear = yearFilter.value;
+        const publicationItems = document.querySelectorAll('.publication-item');
+        
+        publicationItems.forEach(item => {
+            const title = item.querySelector('h4').textContent.toLowerCase();
+            const year = item.getAttribute('data-year');
+            
+            const matchesSearch = title.includes(searchTerm);
+            const matchesYear = !selectedYear || year === selectedYear;
+            
+            if (matchesSearch && matchesYear) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', filterPublications);
+    }
+    
+    if (yearFilter) {
+        yearFilter.addEventListener('change', filterPublications);
+    }
+});
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

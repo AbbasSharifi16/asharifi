@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'COVID-19 Research - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="COVID-19 Research - AI-driven diagnosis, pandemic modeling, climatological analysis, and healthcare optimization">
+    <meta name="keywords" content="COVID-19, Pandemic, AI, Machine Learning, Climatology, Healthcare, Diagnosis">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link active">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Research Hero -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1 class="research-title">COVID-19 Research & AI-Driven Solutions</h1>
+                    <p class="research-subtitle">
+                        Computational Intelligence for Pandemic Modeling, Diagnosis, and Healthcare Optimization
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container" style="padding: var(--space-2) var(--space-4) var(--space-16);">
+            
+            <!-- Project Overview Section -->
+            <section style="margin-bottom: var(--space-12);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Project Overview</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <p style="
+                        font-size: 1.125rem;
+                        line-height: 1.8;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--space-6);
+                        text-align: justify;
+                    ">
+                        In this project, we applied advanced computational intelligence and AI to address critical 
+                        challenges in biomedical engineering and public health, with a strong emphasis on the COVID-19 
+                        pandemic. We developed diverse models to diagnose the virus from lung X-rays using CNNs, estimate 
+                        its pandemic spread, and analyze its relationship with climatological and solar factors. Our work 
+                        also extended to healthcare logistics, using hybrid algorithms to schedule nurses, and assessing 
+                        the impact of pre-infection statin use on virus severity. This complements our broader research 
+                        in using deep learning for medical image analysis, including segmenting tumors and diagnosing 
+                        biomechanical issues.
+                    </p>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--space-6);
+                        margin-top: var(--space-8);
+                    ">
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-virus" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">AI Diagnosis</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">CNN-based Detection</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Pandemic Modeling</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Spread Estimation & Forecasting</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-cloud-sun" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Climatology Analysis</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Environmental Factors</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Images Section -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Research Visualization</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                        margin-bottom: var(--space-6);
+                    ">
+                        <div style="text-align: center;">
+                            <img src="/img/climatology.jpg" 
+                                 alt="Climatology and COVID-19" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Climatological Parameters Impact on COVID-19 Outbreak
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/lung_x_ray.jpg" 
+                                 alt="COVID-19 Lung X-ray Analysis" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                AI-Powered Diagnosis from Lung X-ray Images
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/pandemics2.png" 
+                                 alt="Pandemic Modeling" 
+                                 style="
+                                    width: 90%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Sub-Epidemic Model for Pandemic Estimation
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/pandemics.webp" 
+                                 alt="Solar Activity and Virus Correlation" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                    margin-bottom: var(--space-3);
+                                 ">
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; font-style: italic;">
+                                Solar Activity and Future Virus Forecasting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Research Areas -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Key Research Areas</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--space-6);
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-lungs-virus"></i> AI-Based Diagnosis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Development of convolutional neural networks for detecting and diagnosing infected tissue 
+                            in COVID-19 patients from lung X-ray images with high accuracy and sensitivity.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-temperature-high"></i> Climatology Investigation
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Investigation of effective climatological parameters including temperature, humidity, 
+                            and air quality on COVID-19 outbreak patterns and transmission rates.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-project-diagram"></i> Pandemic Modeling
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Development of sub-epidemic models for estimating COVID-19 pandemic spread and 
+                            assessment of travel-related risks using advanced forecasting techniques.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-user-nurse"></i> Healthcare Logistics
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Novel hybrid salp swarm and genetic algorithm (HSSAGA) for optimizing nurse scheduling 
+                            and resource allocation in COVID-19 patient care.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-sun"></i> Solar Activity Analysis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Multi-step autoregression (MSAR) analysis revealing relationships between solar activity 
+                            and COVID-19 spread, with forecasting of possible future viruses.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-pills"></i> Medical Treatment Analysis
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Machine learning study on the effect of pre-infection statin use in reducing 
+                            COVID-19 severity and improving patient outcomes.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-industry"></i> Post-Pandemic Impact
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Analysis of artificial intelligence and digital transformation impact on industry 
+                            and energy sectors in the post-COVID-19 era.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Publications -->
+            <section style="margin-bottom: var(--space-16);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Related Publications</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div class="publications-list">
+                        
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Investigation of Effective Climatology Parameters on COVID-19 Outbreak in Iran</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Ahmadi, M., Sharifi, A., Dorosti, S., Ghoushchi, S. J., & Ghanbari, N.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Science of the Total Environment, 729, 138705, 2020</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Diagnosis and Detection of Infected Tissue of COVID-19 Patients Based on Lung X-Ray Image Using Convolutional Neural Network Approaches</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Hassantabar, S., Ahmadi, M., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Chaos, Solitons & Fractals, 140, 110170, 2020</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">The Impact of Artificial Intelligence and Digital Style on Industry and Energy Post-COVID-19 Pandemic</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Sharifi, A., Ahmadi, M., & Ala, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Environmental Science and Pollution Research, 28(34), 46964-46984, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">HSSAGA: Designation and Scheduling of Nurses for Taking Care of COVID-19 Patients Using Novel Method of Hybrid Salp Swarm Algorithm and Genetic Algorithm</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Abadi, M. Q. H., Rahmati, S., Sharifi, A., & Ahmadi, M.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Applied Soft Computing, 108, 107449, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Revealing the Relationship Between Solar Activity and COVID-19 and Forecasting of Possible Future Viruses Using Multi-Step Autoregression (MSAR)</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Nasirpour, M. H., Sharifi, A., Ahmadi, M., & Jafarzadeh Ghoushchi, S.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Environmental Science and Pollution Research, 28(28), 38074-38084, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Presentation of a Developed Sub-Epidemic Model for Estimation of the COVID-19 Pandemic and Assessment of Travel-Related Risks in Iran</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Ahmadi, M., Sharifi, A., & Khalili, S.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Environmental Science and Pollution Research, 28(12), 14521-14529, 2021</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Studying the Effect of Taking Statins Before Infection in the Severity Reduction of COVID‐19 with Machine Learning</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Davoudi, A., Ahmadi, M., Sharifi, A., Hassantabar, R., Najafi, N., Tayebi, A., ... & Rabiee, M.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>BioMed Research International, 2021(1), 9995073, 2021</em>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

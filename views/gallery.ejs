@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Dr. Abbas Sharifi</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Dr. Abbas Sharifi</a>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link active">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" class="nav-link nav-link-external">
+                    <i class="fab fa-google-scholar"></i> Scholar
+                </a>
+                <a href="https://linkedin.com/in/abbas-sharifi" target="_blank" rel="noopener" class="nav-link nav-link-external">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%); border-bottom: 3px solid var(--primary);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1 style="color: var(--primary); font-size: 3rem; margin-bottom: 1rem;">Gallery</h1>
+                    <p class="lead" style="color: var(--text); max-width: 800px;">
+                        A collection of photos from research, conferences, and academic activities
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <% if (images && images.length > 0) { %>
+                <div class="gallery-info">
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">
+                        <i class="fas fa-images"></i> <%= images.length %> <%= images.length === 1 ? 'photo' : 'photos' %>
+                    </p>
+                </div>
+                <div class="gallery-grid" data-columns="3">
+                    <% images.forEach((image, index) => { %>
+                        <div class="gallery-item" data-index="<%= index %>">
+                            <img src="<%= image %>" alt="Gallery image <%= index + 1 %>" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <button class="expand-btn" title="View full size">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-images" style="font-size: 4rem; color: var(--primary-light); margin-bottom: 1rem;"></i>
+                    <p style="color: var(--text-light); font-size: 1.2rem; margin-bottom: 0.5rem;">No photos yet</p>
+                    <p style="color: var(--text-light); font-size: 0.95rem;">Add images to <code>public/img/gallery/</code> folder</p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" title="Close (Esc)">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" title="Previous (←)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" title="Next (→)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-counter"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Abbas Sharifi</h3>
+                    <p>Mechanical Engineer & Researcher</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="/">Home</a>
+                    <a href="/research">Research</a>
+                    <a href="/publications">Publications</a>
+                    <a href="/teaching">Teaching</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+                    <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
+                    <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">Web of Science</a>
+                    <a href="https://linkedin.com/in/abbas-sharifi" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">GitHub</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <%= new Date().getFullYear() %> Dr. Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .gallery-controls {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        .grid-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .grid-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .gallery-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-grid[data-columns="1"] {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-grid[data-columns="2"] {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery-grid[data-columns="3"] {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .gallery-grid[data-columns="4"] {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(41, 128, 185, 0.05) 0%, rgba(142, 68, 173, 0.05) 100%);
+            border-radius: 10px;
+            border: 2px dashed var(--primary-light);
+        }
+
+        .gallery-placeholder code {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background: #f5f5f5;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .expand-btn {
+            background: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .expand-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-counter {
+            color: white;
+            font-size: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid[data-columns="4"] {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid[data-columns="3"],
+            .gallery-grid[data-columns="4"] {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-controls {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 1.5rem;
+                padding: 0.75rem;
+            }
+
+            .lightbox-close {
+                font-size: 1.5rem;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid[data-columns="2"],
+            .gallery-grid[data-columns="3"],
+            .gallery-grid[data-columns="4"] {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Gallery functionality
+        function changeGridLayout(columns, buttonElement) {
+            console.log('Changing grid to', columns, 'columns');
+            const galleryGrid = document.querySelector('.gallery-grid');
+            const gridButtons = document.querySelectorAll('.grid-btn');
+            
+            // Update active state
+            gridButtons.forEach(b => b.classList.remove('active'));
+            buttonElement.classList.add('active');
+            
+            // Update grid
+            if (galleryGrid) {
+                galleryGrid.setAttribute('data-columns', columns);
+                console.log('Grid updated to', columns, 'columns');
+            }
+            
+            // Save preference to localStorage
+            localStorage.setItem('galleryColumns', columns);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Gallery page loaded');
+            
+            // Mobile menu toggle
+            const navMenu = document.querySelector('.nav-menu');
+            const navContainer = document.querySelector('.nav-container');
+            
+            // Add mobile menu button if not exists
+            if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-toggle')) {
+                const menuToggle = document.createElement('button');
+                menuToggle.className = 'mobile-menu-toggle';
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+                navContainer.appendChild(menuToggle);
+            }
+
+            // Gallery Grid Controls
+            const gridButtons = document.querySelectorAll('.grid-btn');
+            const galleryGrid = document.querySelector('.gallery-grid');
+            
+            console.log('Grid buttons found:', gridButtons.length);
+            console.log('Gallery grid found:', galleryGrid);
+            
+            gridButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const columns = this.getAttribute('data-columns');
+                    changeGridLayout(columns, this);
+                });
+            });
+
+            // Load saved grid preference
+            const savedColumns = localStorage.getItem('galleryColumns');
+            if (savedColumns && galleryGrid) {
+                galleryGrid.setAttribute('data-columns', savedColumns);
+                gridButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-columns') === savedColumns) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxPrev = document.querySelector('.lightbox-prev');
+            const lightboxNext = document.querySelector('.lightbox-next');
+            const lightboxCounter = document.querySelector('.lightbox-counter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            let currentIndex = 0;
+            const images = <%- JSON.stringify(images || []) %>;
+
+            console.log('Gallery items found:', galleryItems.length);
+            console.log('Images:', images.length);
+
+            // Open lightbox - attach to both item and expand button
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Opening lightbox for image', index);
+                    openLightbox(index);
+                });
+            });
+
+            function openLightbox(index) {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function updateLightbox() {
+                if (images.length > 0) {
+                    lightboxImg.src = images[currentIndex];
+                    lightboxCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
+                }
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightbox();
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightbox();
+            }
+
+            // Event listeners
+            if (lightboxClose) {
+                lightboxClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeLightbox();
+                });
+            }
+            
+            if (lightboxNext) {
+                lightboxNext.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nextImage();
+                });
+            }
+            
+            if (lightboxPrev) {
+                lightboxPrev.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    prevImage();
+                });
+            }
+
+            // Close on background click
+            if (lightbox) {
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox || !lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            if (lightbox) {
+                lightbox.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, false);
+
+                lightbox.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, false);
+            }
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextImage();
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevImage();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

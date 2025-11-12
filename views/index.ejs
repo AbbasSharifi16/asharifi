@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Abbas Sharifi - PhD in Civil Engineering' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Abbas Sharifi - PhD in Civil Engineering, specializing in Water Resource Engineering, Storm Sewer Systems, and Computational Fluid Dynamics at Florida International University">
+    <meta name="keywords" content="Abbas Sharifi, Civil Engineering, Water Resources, Storm Sewer Geysers, CFD, Research, Florida International University">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link <%= typeof page !== 'undefined' && page === 'research' ? 'active' : '' %>">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link <%= typeof page !== 'undefined' && page === 'publications' ? 'active' : '' %>">Publications</a>
+                <a href="/teaching" class="nav-link <%= typeof page !== 'undefined' && page === 'teaching' ? 'active' : '' %>">Teaching</a>
+                <a href="/gallery" class="nav-link <%= typeof page !== 'undefined' && page === 'gallery' ? 'active' : '' %>">Gallery</a>
+                <a href="/contact" class="nav-link <%= typeof page !== 'undefined' && page === 'contact' ? 'active' : '' %>">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Abbas Sharifi</span>
+                </h1>
+                <h2 class="hero-subtitle">PhD in Civil Engineering</h2>
+                <p class="hero-description">
+                    A Researcher at Florida International University, specializing in 
+                    Water Resource Engineering, Storm Sewer Systems, and Computational Fluid Dynamics. 
+                    Currently working on innovative solutions for urban drainage challenges and geyser phenomena.
+                </p>
+                
+                
+                <div class="hero-buttons">
+                    <a href="/research" class="btn btn-primary">View Research</a>
+                    <a href="/cv/cv.pdf" class="btn btn-secondary" download>
+                        Download CV
+                    </a>
+                    <a href="/contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="/img/profile.jpg" alt="Abbas Sharifi" class="profile-image">
+                <div class="image-decoration"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+        </div>
+    
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+
+I am a dedicated researcher and the Laboratory Manager I for the Department of Civil and Environmental Engineering at Florida International University (FIU). I hold a Ph.D. in Civil Engineering (Water Resource Engineering) and an M.S. in Environmental Engineering from FIU, in addition to an M.S. in Mechanical Engineering (Fluid Mechanics and CFD). My research is centered on solving complex challenges in water resources, environmental science, and biomedical engineering through advanced computational modeling and artificial intelligence. 
+</p><p>
+My experience spans computational fluid dynamics (CFD), machine learning, and hardware prototyping. In water resource engineering, I specialize in developing and validating 3D numerical models for storm sewer geyser eruptions using OpenFOAM and deploying AI and digital twin models for managing stormwater infrastructure. My work in biomedical engineering includes modeling magnetic drug targeting in blood vessels and analyzing biomagnetic fluid flow using CFD. I also apply deep learning algorithms (CNNs) for diverse applications, such as the segmentation of brain lesions in MRI images , real-time prediction of air-water volume fractions , and diagnosing fatigue foot from biomechanical data. Furthermore, I have designed and prototyped an autonomous robot for surface water trash collection, which is part of an EPA proposal where I serve as Co-Principal Investigator.
+</p><p>
+In addition to my research, I am actively involved in the academic community. As Lab Manager at FIU, I direct research and teaching laboratories , manage detailed equipment and chemical inventories , and am tasked with developing and enforcing comprehensive laboratory safety protocols compliant with OSHA and EPA standards. I also serve as a Co-Principal Investigator on projects for the Environmental Protection Agency (EPA) and the National Science Foundation (NSF). Academically, I am a Guest Editor for a special issue of Pharmaceutics (Present) and have served as a Guest Editor for the Journal of Healthcare Engineering.
+
+                </p>
+                
+                <div class="research-interests">
+                    <h3>Research Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <i class="fas fa-water"></i>
+                            <span>Water Resource Engineering</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Environmental Science</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>Biomedical Engineering</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Computational Fluid Dynamics</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Signal Processing</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Education & Experience -->
+<section class="background">
+    <div class="container">
+        <div class="background-grid">
+            <div class="education-section">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker current"></div>
+                        <div class="timeline-content">
+                            <h3>PhD in Civil Engineering</h3>
+                            <div class="organization">
+                                <i class="fas fa-university"></i>
+                                <h4>Florida International University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami, Florida, USA</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> 2022 - 2025</span>
+                            <p class="description">Specialization: Water Resource Engineering</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>MS in Environmental Engineering</h3>
+                            <div class="organization">
+                                <i class="fas fa-university"></i>
+                                <h4>Florida International University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami, Florida, USA</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> 2022 - 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>MS in Mechanical Engineering</h3>
+                            <div class="organization">
+                                <i class="fas fa-university"></i>
+                                <h4>Urmia University of Technology</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> 2014 - 2016</span>
+                            <p class="description">Specialization: Energy Conversion, Fluid Mechanics and CFD</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>BS in Mechanical Engineering</h3>
+                            <div class="organization">
+                                <i class="fas fa-university"></i>
+                                <h4>Urmia University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> 2010 - 2014</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-section">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker current"></div>
+                        <div class="timeline-content">
+                            <h3>Laboratory Manager I</h3>
+                            <div class="organization">
+                                <i class="fas fa-building"></i>
+                                <h4>Florida International University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami, Florida, USA</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> June 2025 - Present</span>
+                            <ul class="description-list">
+                                <li>Directed the management of research and teaching laboratories for the Department of Civil and Environmental Engineering</li>
+                                <li>Developed and enforced laboratory safety protocols compliant with OSHA and EPA standards, ensuring a safe environment for students and faculty</li>
+                                <li>Managed a detailed inventory of chemicals and equipment and ensured all laboratory practices align with ABET accreditation criteria. Provided technical training and support for a wide range of student and faculty research projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Teaching Assistant</h3>
+                            <div class="organization">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h4>Florida International University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami, Florida, USA</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> January 2022 - May 2024</span>
+                            <ul class="description-list">
+                                <li><strong>Spring 2022:</strong> Environmental Engineering for Global Sustainability, Air Pollution Engineering</li>
+                                <li><strong>Summer 2022:</strong> Introduction to Environmental Engineering, Environmental Laboratory</li>
+                                <li><strong>Summer 2023:</strong> Fluid Mechanics</li>
+                                <li><strong>Spring 2024:</strong> Fluid Mechanics, Environmental Engineering for Global Sustainability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Research Assistant</h3>
+                            <div class="organization">
+                                <i class="fas fa-flask"></i>
+                                <h4>Florida International University</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami, Florida, USA</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> January 2022 - May 2025</span>
+                            <ul class="description-list">
+                                <li><strong>Dissertation:</strong> Experimental and Numerical Simulation of Storm Sewer Geysers and Design of Retrofitting Systems</li>
+                                <li>Conducting experimental and computational research on storm sewer systems to understand geyser eruption dynamics</li>
+                                <li>Developing numerical models using CFD and validating them with experimental data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Laboratory Manager</h3>
+                            <div class="organization">
+                                <i class="fas fa-building"></i>
+                                <h4>Urmia University of Technology</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> October 2016 - June 2017</span>
+                            <ul class="description-list">
+                                <li>Managed Fluid Mechanics Laboratory</li>
+                                <li>Taught Fluid Mechanics Course</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Instructor</h3>
+                            <div class="organization">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h4>Urmia University of Technology</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> December 2015 - June 2016</span>
+                            <p class="description">Taught OpenFOAM and C++ Programming</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Researcher</h3>
+                            <div class="organization">
+                                <i class="fas fa-microscope"></i>
+                                <h4>Urmia University of Technology</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> September 2016 - January 2022</span>
+                            <ul class="description-list">
+                                <li>Investigated climatological influences on COVID-19 outbreaks and developed innovative machine learning models</li>
+                                <li>Developed advanced imaging analysis techniques for segmentation and classification using Machine Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Research Assistant</h3>
+                            <div class="organization">
+                                <i class="fas fa-flask"></i>
+                                <h4>Urmia University of Technology</h4>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Urmia, Iran</span>
+                            </div>
+                            <span class="period"><i class="far fa-calendar"></i> September 2014 - September 2016</span>
+                            <ul class="description-list">
+                                <li><strong>Thesis:</strong> Numerical Study of Magnetic Drug Targeting in Blood Vessels Using Magnetic Nanoparticles</li>
+                                <li>Designed numerical models with CFD for targeted drug delivery using magnetic fields</li>
+                                <li>Developed high-accuracy simulations for nanoparticle movement and interaction within blood vessels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mentoring and Academic Contributions -->
+<section class="mentoring">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Mentoring and Academic Contributions</h2>
+            <p class="section-subtitle">Contributing to the academic community through peer review, mentoring, and leadership</p>
+        </div>
+        
+        <div class="mentoring-grid">
+            <div class="mentoring-card">
+                <div class="card-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Mentoring Experience</h3>
+                <ul class="mentoring-list">
+                    <li><strong>Academy Graduate & Mentor</strong> for Peer-Reviewing Papers in Web of Science (2019 - Present)</li>
+                    <li><strong>Peer-Review Record:</strong> 28 Journals, 84 papers reviewed</li>
+                </ul>
+            </div>
+            
+            <div class="mentoring-card">
+                <div class="card-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <h3>Editorial Contributions</h3>
+                <ul class="mentoring-list">
+                    <li>
+                        <strong>Guest Editor</strong> of Journal of Healthcare Engineering for Special Issue of "Complexity Systems for Scheduling in Healthcare" (Aug 2022 - May 2024)<br>
+                        <a href="https://onlinelibrary.wiley.com/doi/toc/10.1155/7158.si.489193" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">
+                            <i class="fas fa-external-link-alt"></i> View Special Issue
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Advisory Board</strong> of "2nd International Conference on Artificial Intelligence Science and Applications in Industry and Society (CAISAIS 2023)"<br>
+                        <a href="https://sites.google.com/view/caisa1/committee" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">
+                            <i class="fas fa-external-link-alt"></i> View Committee
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Guest Editor</strong> of Pharmaceutics for Special Issue of "Advances in Drug Targeting Chemistry and Magnetic Fluid Dynamics for Enhanced Therapeutic Efficacy" (Present)<br>
+                        <a href="https://www.mdpi.com/journal/pharmaceutics/special_issues/08NGNF3V1N" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">
+                            <i class="fas fa-external-link-alt"></i> View Special Issue
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="mentoring-card">
+                <div class="card-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Leadership & Projects</h3>
+                <ul class="mentoring-list">
+                    <li><strong>Leader of Project:</strong> Design and Implementation of a High-Performance Computing (HPC) System Using Computer Clustering in the Linux Operating System for Academic and Research Centers at Urmia University of Technology</li>
+                    <li><strong>Co-PI:</strong> "An Engineering Approach to Coastal Conservation: The Design and Evaluation of Autonomously Floating Debris Collectors," Environmental Protection Agency (EPA)</li>
+                    <li><strong>Co-PI:</strong> "NSF on geyser prediction using AI," National Science Foundation (NSF)</li>
+                </ul>
+            </div>
+            
+            <div class="mentoring-card">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Publication Record</h3>
+                <ul class="mentoring-list">
+                    <li><strong>Total Publications:</strong> <%= scholarMetrics && scholarMetrics.publications ? scholarMetrics.publications : '36' %> papers</li>
+                    <li><strong>Total Citations:</strong> <%= scholarMetrics && scholarMetrics.citations ? scholarMetrics.citations.toLocaleString() : '2,210' %></li>
+                    <li><strong>h-index:</strong> <%= scholarMetrics && scholarMetrics.hIndex ? scholarMetrics.hIndex : '23' %></li>
+                    <li><strong>i10-index:</strong> <%= scholarMetrics && scholarMetrics.i10Index ? scholarMetrics.i10Index : '28' %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

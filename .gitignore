@@ -1,0 +1,10 @@
+node_modules/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# Large video files (too large for GitHub)
+public/video/
+public/presentations/*.mp4
+public/presentations/*.pptx

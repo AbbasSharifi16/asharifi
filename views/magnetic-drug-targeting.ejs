@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Magnetic Drug Targeting - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- KaTeX for Math Equations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Numerical Study of Magnetic Drug Targeting in Blood Vessels Using Magnetic Nanoparticles - CFD Simulation and Magnetic Field Analysis">
+    <meta name="keywords" content="Magnetic Drug Targeting, Nanoparticles, CFD, Magnetic Field, Blood Vessels, Drug Delivery">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link active">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Research Hero -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1 class="research-title">Magnetic Drug Targeting in Blood Vessels</h1>
+                    <p class="research-subtitle">
+                        Numerical Study Using Magnetic Nanoparticles and CFD Simulation
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container" style="padding: var(--space-2) var(--space-4) var(--space-16);">
+            
+            <!-- Thesis Presentation Section -->
+            <section style="margin-bottom: var(--space-12);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Master's Thesis Presentation</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div style="margin-bottom: var(--space-6); text-align: center;">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">Numerical Study of Magnetic Drug Targeting in Blood Vessels Using Magnetic Nanoparticles</h3>
+                        <p style="
+                            color: var(--text-secondary);
+                            margin-bottom: var(--space-4);
+                            font-size: 1.125rem;
+                        ">Master's Thesis - Urmia University of Technology (2014-2016)</p>
+                    </div>
+                    
+                    <!-- Embedded Presentation Video -->
+                    <div style="
+                        position: relative;
+                        width: 100%;
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-lg);
+                        overflow: hidden;
+                        background: #000;
+                    ">
+                        <video 
+                            controls 
+                            style="width: 100%; height: auto; display: block;"
+                            poster="/img/lab_image.jpg">
+                            <source src="/presentations/Thesis-presentation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Overview Section -->
+            <section style="margin-bottom: var(--space-8);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Project Overview</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <p style="
+                        font-size: 1.125rem;
+                        line-height: 1.8;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--space-6);
+                        text-align: justify;
+                    ">
+                        This research focuses on the numerical simulation of magnetic drug targeting in blood vessels using 
+                        computational fluid dynamics (CFD) and magnetic field analysis. The study investigates how magnetic 
+                        nanoparticles can be controlled and directed to specific locations in blood vessels using external 
+                        magnetic fields, enabling targeted drug delivery for cancer treatment and other medical applications.
+                    </p>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--space-6);
+                        margin-top: var(--space-8);
+                    ">
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-magnet" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Magnetic Field Control</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">External magnetic field guidance</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-atom" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">Nanoparticle Dynamics</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">2nm, 5nm, and 10nm diameter particles</p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="
+                                width: 80px;
+                                height: 80px;
+                                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                                border-radius: var(--radius-full);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto var(--space-4);
+                            ">
+                                <i class="fas fa-wind" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">CFD Simulation</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Blood flow and particle transport</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aneurysm Geometry Section -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                "> Vessel Geometry & Magnetic Field Configuration</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                        margin-bottom: var(--space-4);
+                    ">
+                        <div style="text-align: center;">
+                            <img src="/img/magnet1.jpg" 
+                                 alt="Magnetic Configuration 1" 
+                                 style="
+                                    width: 90%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                 ">
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/megnet2.jpg" 
+                                 alt="Magnetic Configuration 2" 
+                                 style="
+                                    width: 70%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                 ">
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/magnet3.jpg" 
+                                 alt="Magnetic Configuration 3" 
+                                 style="
+                                    width: 90%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                 ">
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="/img/magnet4.png" 
+                                 alt="Magnetic Configuration 4" 
+                                 style="
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-lg);
+                                    box-shadow: var(--shadow-md);
+                                 ">
+                        </div>
+                    </div>
+                    
+                    <p style="
+                        color: var(--text-secondary);
+                        margin-top: var(--space-4);
+                        font-style: italic;
+                        text-align: center;
+                    ">
+                        Computational domain showing the vessel geometry and different magnetic field configurations used in CFD simulations
+                    </p>
+                </div>
+            </section>
+
+            <!-- Governing Equations Section -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Governing Equations</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <!-- Continuity Equation -->
+                    <div style="margin-bottom: var(--space-8);">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                        ">Continuity Equation</h3>
+                        <div style="
+                            background: white;
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                            overflow-x: auto;
+                        ">
+                            <p style="font-size: 1.25rem; text-align: center;">
+                                $\frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_i}(\rho V_i) = 0$
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Momentum Equation -->
+                    <div style="margin-bottom: var(--space-8);">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                        ">Momentum Equation</h3>
+                        <div style="
+                            background: white;
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                            overflow-x: auto;
+                        ">
+                            <p style="font-size: 1.25rem; text-align: center;">
+                                $\frac{\partial}{\partial t}(\rho V_i) + \frac{\partial}{\partial x_j}(\rho V_i V_j) = -\frac{\partial p}{\partial x_i} + \frac{\partial}{\partial x_j}\mu\left(\frac{\partial V_i}{\partial x_j} + \frac{\partial V_j}{\partial x_i}\right) + \mu_0 M_i \frac{\partial H_j}{\partial x_i}$
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mass Transfer Equation -->
+                    <div style="margin-bottom: var(--space-8);">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                        ">Mass Transfer Equation</h3>
+                        <div style="
+                            background: white;
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                            overflow-x: auto;
+                        ">
+                            <p style="font-size: 1.25rem; text-align: center; margin-bottom: var(--space-4);">
+                                $\frac{\partial \alpha}{\partial t} + \frac{\partial}{\partial x_j}(\alpha V_j) = \frac{\partial J_j}{\partial x_j}$
+                            </p>
+                            <p style="font-size: 1.125rem; margin-bottom: var(--space-3);">
+                                where
+                            </p>
+                            <p style="font-size: 1.125rem; text-align: center;">
+                                $J_j = \Gamma\left(\frac{\partial \alpha}{\partial x_j} + S_T\frac{\partial T}{\partial x_j} - \frac{\alpha}{H}\xi L(\xi)\frac{\partial H_j}{\partial x_j}\right)$
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Auxiliary Equations -->
+                    <div style="margin-bottom: var(--space-8);">
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                        ">Auxiliary Equations</h3>
+                        <div style="
+                            background: white;
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                            overflow-x: auto;
+                        ">
+                            <p style="font-size: 1.125rem; text-align: center; margin-bottom: var(--space-4);">
+                                $\Gamma = \frac{K_B T}{3\pi\mu_b d_p}$
+                            </p>
+                            <p style="font-size: 1.125rem; text-align: center; margin-bottom: var(--space-4);">
+                                $\xi = \frac{m_i\mu_0 H_i}{K_B T}$
+                            </p>
+                            <p style="font-size: 1.125rem; text-align: center; margin-bottom: var(--space-4);">
+                                $L(\xi) = \coth\xi - \frac{1}{\xi}$
+                            </p>
+                            <p style="font-size: 1.125rem; text-align: center; margin-bottom: var(--space-4);">
+                                $m_i = \frac{4\mu_B\pi d_p^3}{6 \times 91.25 \times 10^{-30}}$
+                            </p>
+                            <p style="font-size: 1.125rem; text-align: center;">
+                                $M_i = Nm_i L(\xi)$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulation Results Section -->
+            <section style="margin-bottom: var(--space-8);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Spatio-Temporal Evolution of Nanoparticles</h2>
+                
+                <!-- Without Magnetic Field vs With Magnetic Field (10nm) -->
+                <div style="margin-bottom: var(--space-12);">
+                    <h3 style="
+                        font-size: 1.75rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                        margin-bottom: var(--space-6);
+                    ">
+                        <i class="fas fa-vial"></i> Baseline Study: d = 10nm
+                    </h3>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                    ">
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">
+                                <i class="fas fa-ban"></i> Without Magnetic Field
+                            </h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">
+                                <i class="fas fa-magnet"></i> With Magnetic Field
+                            </h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- With Magnetic Field - 5nm and 2nm -->
+                <div style="margin-bottom: var(--space-12);">
+                    <h3 style="
+                        font-size: 1.75rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                        margin-bottom: var(--space-6);
+                    ">
+                        <i class="fas fa-magnet"></i> Smaller Nanoparticles Under Magnetic Field
+                    </h3>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                    ">
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">Diameter: d = 5nm</h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">Diameter: d = 2nm</h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parametric Study -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h3 style="
+                        font-size: 1.75rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                        margin-bottom: var(--space-6);
+                    ">
+                        <i class="fas fa-chart-line"></i> Parametric Study: Magnetic Number & Reynolds Number Effects
+                    </h3>
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--space-6);
+                    ">
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">Mnf = 32.8, Re = 100, X = x1</h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <div style="
+                            background: var(--background-primary);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                        ">
+                            <h4 style="
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-4);
+                                font-weight: 600;
+                            ">Mnf = 328, Re = 100, X = x2</h4>
+                            <video controls style="width: 100%; border-radius: var(--radius-md);" poster="/img/lab_image.jpg">
+                                <source src="/video/magnetic/video6.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section style="margin-bottom: var(--space-8);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Key Research Findings</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--space-6);
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-check-circle"></i> Particle Size Effect
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Smaller nanoparticles (2nm) demonstrate higher responsiveness to magnetic field gradients 
+                            compared to larger particles (10nm), enabling more precise drug targeting.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-check-circle"></i> Magnetic Field Strength
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Higher magnetic field strength (Mnf = 328) significantly improves particle capture 
+                            efficiency at target locations compared to lower field strengths (Mnf = 32.8).
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-check-circle"></i> Blood Flow Impact
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Reynolds number variations demonstrate the critical balance between blood flow velocity 
+                            and magnetic force for optimal particle accumulation at target sites.
+                        </p>
+                    </div>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        border-left: 4px solid var(--primary-color);
+                    ">
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-3);
+                        ">
+                            <i class="fas fa-check-circle"></i> Spatial Distribution
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            CFD simulations reveal optimal magnet positioning and field geometry for maximizing 
+                            nanoparticle concentration at tumor or diseased tissue locations.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Publications -->
+            <section style="margin-bottom: var(--space-16);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Related Publications</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <div class="publications-list">
+                        
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Study of Blood Flow Inside the Stenosis Vessel Under the Effect of Solenoid Magnetic Field Using Ferrohydrodynamics Principles</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Badfar, H., Motlagh, S. Y., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>The European Physical Journal Plus, 132(10), 440, 2017</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Investigation of the Effects of Two Parallel Wires' Non-Uniform Magnetic Field on Heat and Biomagnetic Fluid Flow in an Aneurysm</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Sharifi, A., Yekani Motlagh, S., & Badfar, H.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>International Journal of Computational Fluid Dynamics, 32(4-5), 248-259, 2018</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Presentation of New Thermal Conductivity Expression for Al₂O₃–Water and CuO–Water Nanofluids Using Gene Expression Programming (GEP)</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Yekani Motlagh, S., Sharifi, A., Ahmadi, M., & Badfar, H.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Journal of Thermal Analysis and Calorimetry, 135(1), 195-206, 2019</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Ferro Hydro Dynamic Analysis of Heat Transfer and Biomagnetic Fluid Flow in Channel Under the Effect of Two Inclined Permanent Magnets</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Sharifi, A., Motlagh, S. Y., & Badfar, H.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Journal of Magnetism and Magnetic Materials, 472, 115-122, 2019</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                            border-bottom: 1px solid var(--border-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Numerical Investigation of Magnetic Drug Targeting Using Magnetic Nanoparticles to the Aneurysmal Vessel</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Sharifi, A., Motlagh, S. Y., & Badfar, H.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Journal of Magnetism and Magnetic Materials, 474, 236-245, 2019</em>
+                            </p>
+                        </div>
+
+                        <div class="publication-item" style="
+                            padding: var(--space-6);
+                        ">
+                            <h3 style="
+                                font-size: 1.125rem;
+                                font-weight: 600;
+                                color: var(--text-primary);
+                                margin-bottom: var(--space-2);
+                            ">Numerical Simulation of Magnetic Drug Targeting to the Stenosis Vessel Using Fe₃O₄ Magnetic Nanoparticles Under the Effect of Magnetic Field of Wire</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-2);">
+                                Badfar, H., Yekani Motlagh, S., & Sharifi, A.
+                            </p>
+                            <p style="color: var(--primary-color); font-weight: 500;">
+                                <em>Cardiovascular Engineering and Technology, 11(2), 162-175, 2020</em>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    
+    <!-- KaTeX Auto-Render -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

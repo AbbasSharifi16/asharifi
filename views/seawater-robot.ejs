@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Sea Water Robot - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Autonomous Sea Water Robot for Debris and Algae Collection using IoT, Raspberry Pi, and YOLO Object Detection">
+    <meta name="keywords" content="Sea Water Robot, IoT, Raspberry Pi, YOLO, Object Detection, Debris Collection, Algae Collection">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a class="nav-link active">Research <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/seawater-robot">Sea Water Robot</a>
+                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
+                        <a href="/research/medical-image-processing">Medical Image Processing</a>
+                        <a href="/research/covid-research">COVID-19 Research</a>
+                    </div>
+                </div>
+                <a href="/publications" class="nav-link">Publications</a>
+                <a href="/teaching" class="nav-link">Teaching</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fas fa-graduation-cap"></i> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Research Hero -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1 class="research-title">Autonomous Sea Water Robot</h1>
+                    <p class="research-subtitle">
+                        IoT-Enabled Debris and Algae Collection System with AI-Powered Object Detection
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="container" style="padding: var(--space-2) var(--space-4) var(--space-16);">
+            
+            <!-- Project Overview Section -->
+            <section style="margin-bottom: var(--space-8);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Project Overview</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--space-8);
+                    align-items: center;
+                    margin-bottom: var(--space-8);
+                ">
+                    <div>
+                        <img src="/img/robot_project_overview.png" 
+                             alt="Sea Water Robot Overview" 
+                             style="
+                                width: 100%;
+                                height: auto;
+                                border-radius: var(--radius-lg);
+                                box-shadow: var(--shadow-lg);
+                             ">
+                    </div>
+                    
+                    <div>
+                        <p style="
+                            font-size: 1.125rem;
+                            line-height: 1.8;
+                            color: var(--text-secondary);
+                            margin-bottom: var(--space-6);
+                        ">
+                            This innovative autonomous robot is designed for surface water debris and algae collection, 
+                            combining Internet of Things (IoT) technology with artificial intelligence to provide an 
+                            effective solution for coastal and water body conservation.
+                        </p>
+                        
+                        <h3 style="
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: var(--space-4);
+                        ">Key Features</h3>
+                        
+                        <ul style="
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        ">
+                            <li style="
+                                padding: var(--space-3) 0;
+                                border-bottom: 1px solid var(--border-color);
+                                display: flex;
+                                align-items: start;
+                                gap: var(--space-3);
+                            ">
+                                <i class="fas fa-microchip" style="color: var(--primary-color); margin-top: 4px;"></i>
+                                <div>
+                                    <strong>IoT-Enabled System:</strong> Real-time monitoring and control through wireless connectivity
+                                </div>
+                            </li>
+                            <li style="
+                                padding: var(--space-3) 0;
+                                border-bottom: 1px solid var(--border-color);
+                                display: flex;
+                                align-items: start;
+                                gap: var(--space-3);
+                            ">
+                                <i class="fab fa-raspberry-pi" style="color: var(--primary-color); margin-top: 4px;"></i>
+                                <div>
+                                    <strong>Raspberry Pi Control:</strong> Powerful embedded computing for autonomous operation
+                                </div>
+                            </li>
+                            <li style="
+                                padding: var(--space-3) 0;
+                                border-bottom: 1px solid var(--border-color);
+                                display: flex;
+                                align-items: start;
+                                gap: var(--space-3);
+                            ">
+                                <i class="fas fa-eye" style="color: var(--primary-color); margin-top: 4px;"></i>
+                                <div>
+                                    <strong>YOLO Object Detection:</strong> Advanced AI for identifying and targeting debris and algae
+                                </div>
+                            </li>
+                            <li style="
+                                padding: var(--space-3) 0;
+                                border-bottom: 1px solid var(--border-color);
+                                display: flex;
+                                align-items: start;
+                                gap: var(--space-3);
+                            ">
+                                <i class="fas fa-map-marked-alt" style="color: var(--primary-color); margin-top: 4px;"></i>
+                                <div>
+                                    <strong>GPS Navigation:</strong> Precise positioning and mission-based autonomous navigation
+                                </div>
+                            </li>
+                            <li style="
+                                padding: var(--space-3) 0;
+                                display: flex;
+                                align-items: start;
+                                gap: var(--space-3);
+                            ">
+                                <i class="fas fa-recycle" style="color: var(--primary-color); margin-top: 4px;"></i>
+                                <div>
+                                    <strong>Debris Collection:</strong> Efficient collection mechanism for surface water pollutants
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Software GUI Section -->
+            <section style="margin-bottom: var(--space-2);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Software & Control Interface</h2>
+                
+                <div style="
+                    background: var(--background-primary);
+                    padding: var(--space-8);
+                    border-radius: var(--radius-xl);
+                    box-shadow: var(--shadow-lg);
+                ">
+                    <img src="/img/robot_project_software_GUI.png" 
+                         alt="Robot Control Software GUI" 
+                         style="
+                            width: 100%;
+                            height: auto;
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                            margin-bottom: var(--space-6);
+                         ">
+                    
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: var(--space-6);
+                        margin-top: var(--space-8);
+                    ">
+                        <div style="
+                            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.25rem;
+                                font-weight: 600;
+                                color: var(--primary-color);
+                                margin-bottom: var(--space-3);
+                            ">
+                                <i class="fas fa-desktop"></i> Real-Time Monitoring
+                            </h3>
+                            <p style="
+                                color: var(--text-secondary);
+                                line-height: 1.6;
+                            ">
+                                Live video feed with YOLO object detection overlay, displaying identified debris and algae 
+                                in real-time with bounding boxes and classification confidence scores.
+                            </p>
+                        </div>
+                        
+                        <div style="
+                            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.25rem;
+                                font-weight: 600;
+                                color: var(--primary-color);
+                                margin-bottom: var(--space-3);
+                            ">
+                                <i class="fas fa-route"></i> Mission Planning
+                            </h3>
+                            <p style="
+                                color: var(--text-secondary);
+                                line-height: 1.6;
+                            ">
+                                GPS-based waypoint navigation system allowing users to define collection zones and 
+                                autonomous patrol patterns for optimal coverage of target areas.
+                            </p>
+                        </div>
+                        
+                        <div style="
+                            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.25rem;
+                                font-weight: 600;
+                                color: var(--primary-color);
+                                margin-bottom: var(--space-3);
+                            ">
+                                <i class="fas fa-sliders-h"></i> System Control
+                            </h3>
+                            <p style="
+                                color: var(--text-secondary);
+                                line-height: 1.6;
+                            ">
+                                Comprehensive control panel for motor speed, collection mechanism activation, 
+                                and system diagnostics with telemetry data from all onboard sensors.
+                            </p>
+                        </div>
+                        
+                        <div style="
+                            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                            padding: var(--space-6);
+                            border-radius: var(--radius-lg);
+                            border-left: 4px solid var(--primary-color);
+                        ">
+                            <h3 style="
+                                font-size: 1.25rem;
+                                font-weight: 600;
+                                color: var(--primary-color);
+                                margin-bottom: var(--space-3);
+                            ">
+                                <i class="fas fa-chart-line"></i> Data Analytics
+                            </h3>
+                            <p style="
+                                color: var(--text-secondary);
+                                line-height: 1.6;
+                            ">
+                                Collection statistics, route efficiency metrics, and environmental impact tracking 
+                                to optimize performance and demonstrate conservation effectiveness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section style="margin-bottom: var(--space-16);">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Technical Specifications</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: var(--space-6);
+                ">
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fab fa-raspberry-pi" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">Computing Platform</h3>
+                        <p style="color: var(--text-secondary);">Raspberry Pi 4 with 4GB RAM for AI processing</p>
+                    </div>
+                    
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fas fa-brain" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">AI Model</h3>
+                        <p style="color: var(--text-secondary);">YOLOv5 for real-time object detection</p>
+                    </div>
+                    
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fas fa-satellite-dish" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">GPS Module</h3>
+                        <p style="color: var(--text-secondary);">High-precision GPS for autonomous navigation</p>
+                    </div>
+                    
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fas fa-wifi" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">IoT Connectivity</h3>
+                        <p style="color: var(--text-secondary);">WiFi and cellular for remote monitoring</p>
+                    </div>
+                    
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fas fa-video" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">Camera System</h3>
+                        <p style="color: var(--text-secondary);">HD camera with wide-angle lens for detection</p>
+                    </div>
+                    
+                    <div style="
+                        background: var(--background-primary);
+                        padding: var(--space-6);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                            border-radius: var(--radius-full);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto var(--space-4);
+                        ">
+                            <i class="fas fa-cog" style="font-size: 1.75rem; color: white;"></i>
+                        </div>
+                        <h3 style="
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            margin-bottom: var(--space-2);
+                        ">Collection System</h3>
+                        <p style="color: var(--text-secondary);">Motorized conveyor for debris retrieval</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Impact -->
+            <section style="
+                background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(26, 35, 126, 0.1) 100%);
+                padding: var(--space-12);
+                border-radius: var(--radius-xl);
+                margin-bottom: var(--space-16);
+            ">
+                <h2 style="
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    margin-bottom: var(--space-8);
+                    text-align: center;
+                ">Environmental Impact</h2>
+                
+                <div style="
+                    max-width: 900px;
+                    margin: 0 auto;
+                ">
+                    <p style="
+                        font-size: 1.125rem;
+                        line-height: 1.8;
+                        color: var(--text-secondary);
+                        margin-bottom: var(--space-6);
+                        text-align: center;
+                    ">
+                        This autonomous sea water robot represents a significant advancement in coastal conservation technology, 
+                        providing an efficient and sustainable solution for maintaining clean water bodies and protecting marine ecosystems.
+                    </p>
+                    
+ 
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> asharifi@fiu.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida International University, Miami, FL</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
