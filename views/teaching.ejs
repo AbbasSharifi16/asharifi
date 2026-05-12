@@ -22,44 +22,7 @@
     <meta name="author" content="Abbas Sharifi">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="logo-text">Abbas Sharifi</span>
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <a class="nav-link">Research <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/research">Storm Sewer Geyser Simulation</a>
-                        <a href="/research/seawater-robot">Sea Water Robot</a>
-                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
-                        <a href="/research/medical-image-processing">Medical Image Processing</a>
-                        <a href="/research/covid-research">COVID-19 Research</a>
-                    </div>
-                </div>
-                <a href="/publications" class="nav-link">Publications</a>
-                <a href="/teaching" class="nav-link active">Teaching</a>
-                <a href="/gallery" class="nav-link">Gallery</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
-                    <i class="fas fa-graduation-cap"></i> Scholar
-                </a>
-                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-            
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <%- include('partials/navbar') %>
 
     <!-- Main Content -->
     <main>
@@ -75,45 +38,6 @@
                 </div>
             </div>
         </section>
-
-<!-- Current Position -->
-<section class="current-position">
-    <div class="container">
-        <div class="position-card">
-            <div class="position-header">
-                <div class="position-info">
-                    <span class="position-status">Current Position</span>
-                    <h2>Laboratory Manager I</h2>
-                    <h3>Department of Civil and Environmental Engineering</h3>
-                    <p class="institution">Florida International University</p>
-                    <span class="period">June 2025 - Present</span>
-                </div>
-                <div class="position-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-            </div>
-            
-            <div class="position-description">
-                <p>
-                    Managing research and teaching laboratories for the Department of Civil and Environmental Engineering, 
-                    including budget management, equipment oversight, safety protocol development, and providing technical 
-                    training and support for student and faculty research activities.
-                </p>
-                
-                <div class="responsibilities">
-                    <h4>Key Responsibilities:</h4>
-                    <ul>
-                        <li>Laboratory safety management and protocol enforcement</li>
-                        <li>Equipment maintenance and procurement</li>
-                        <li>Student training and technical support</li>
-                        <li>Research project coordination</li>
-                        <li>Budget planning and resource allocation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Teaching Experience -->
 <section class="teaching-experience">

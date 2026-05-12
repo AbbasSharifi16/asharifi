@@ -9,34 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">Dr. Abbas Sharifi</a>
-            <div class="nav-menu">
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <a class="nav-link">Research <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/research">Storm Sewer Geyser Simulation</a>
-                        <a href="/research/seawater-robot">Sea Water Robot</a>
-                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
-                        <a href="/research/medical-image-processing">Medical Image Processing</a>
-                        <a href="/research/covid-research">COVID-19 Research</a>
-                    </div>
-                </div>
-                <a href="/publications" class="nav-link">Publications</a>
-                <a href="/teaching" class="nav-link">Teaching</a>
-                <a href="/gallery" class="nav-link active">Gallery</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" class="nav-link nav-link-external">
-                    <i class="fab fa-google-scholar"></i> Scholar
-                </a>
-                <a href="https://linkedin.com/in/abbas-sharifi" target="_blank" rel="noopener" class="nav-link nav-link-external">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-    </nav>
+    <%- include('partials/navbar') %>
 
     <section class="hero" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%); border-bottom: 3px solid var(--primary);">
         <div class="container">

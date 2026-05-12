@@ -22,44 +22,7 @@
     <meta name="author" content="Abbas Sharifi">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="logo-text">Abbas Sharifi</span>
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <a class="nav-link active">Research <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/research">Storm Sewer Geyser Simulation</a>
-                        <a href="/research/seawater-robot">Sea Water Robot</a>
-                        <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
-                        <a href="/research/medical-image-processing">Medical Image Processing</a>
-                        <a href="/research/covid-research">COVID-19 Research</a>
-                    </div>
-                </div>
-                <a href="/publications" class="nav-link">Publications</a>
-                <a href="/teaching" class="nav-link">Teaching</a>
-                <a href="/gallery" class="nav-link">Gallery</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
-                    <i class="fas fa-graduation-cap"></i> Scholar
-                </a>
-                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-            
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <%- include('partials/navbar') %>
 
     <!-- Main Content -->
     <main>

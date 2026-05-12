@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'GDSL Digital Twin - Abbas Sharifi' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GDSL Digital Twin - 3D Urban Microclimate CFD Simulation with LiDAR Geometry Extraction and Sensor Data Assimilation">
+    <meta name="keywords" content="CFD, Digital Twin, Urban Microclimate, LiDAR, Voxelization, DEM, Cesium, Navier-Stokes, Boussinesq">
+    <meta name="author" content="Abbas Sharifi">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1 class="research-title">GDSL Digital Twin</h1>
+                    <p class="research-subtitle">
+                        3D Urban Microclimate CFD Simulation with Real-Time Sensor Assimilation, LiDAR Geometry Extraction, and Cesium-Based Mapping
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" style="padding: var(--space-8) var(--space-4) var(--space-16);">
+
+            <!-- Project Overview -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">Project Overview</h2>
+                <div class="cfd-overview-card">
+                    <p class="cfd-overview-text">
+                        The <strong>GDSL Digital Twin</strong> is a high-fidelity urban microclimate simulation framework built around a custom 3D CFD solver (<code>microclimate_solver.py</code>). It solves the incompressible Navier–Stokes equations under the <strong>Boussinesq approximation</strong> on a regular (optionally stretched) Cartesian grid, coupled with scalar temperature advection–diffusion, a porous-media canopy model, a simplified solar-radiation source, and real-time sensor data assimilation.
+                    </p>
+                    <div class="cfd-feature-grid">
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-wind"></i>
+                            <span>3D incompressible Navier–Stokes + Boussinesq buoyancy</span>
+                        </div>
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Coupled temperature advection–diffusion with solar heating</span>
+                        </div>
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-tree"></i>
+                            <span>Porous-media canopy drag &amp; evaporative cooling</span>
+                        </div>
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>Live sensor data assimilation (nudging scheme)</span>
+                        </div>
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-cube"></i>
+                            <span>STL voxelization of buildings, trees &amp; terrain</span>
+                        </div>
+                        <div class="cfd-feature-item">
+                            <i class="fas fa-map"></i>
+                            <span>Cesium-based geospatial domain mapping</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cesium Map Section -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">Cesium Geospatial Domain Map</h2>
+                <p class="cfd-section-desc">
+                    The simulation domain is georeferenced using <strong>CesiumJS</strong>, enabling real-world coordinate alignment of the CFD grid with building footprints, terrain elevation, and sensor locations. The map interface allows interactive selection and inspection of the computational domain before running the solver.
+                </p>
+                <div class="cfd-video-full">
+                    <video autoplay loop muted playsinline class="cfd-video-player">
+                        <source src="/video/cfd/map_for_website.mp4" type="video/mp4">
+                    </video>
+                    <p class="cfd-video-caption">CesiumJS-based geospatial map used to define and visualize the CFD simulation domain</p>
+                </div>
+            </section>
+
+            <!-- Geometry Extraction Section -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">Urban Geometry Extraction</h2>
+                <p class="cfd-section-desc">
+                    Building geometries, street networks, and terrain surfaces are extracted from geospatial data sources and converted to STL meshes. These meshes are then voxelized onto the Cartesian CFD grid using a <strong>parity ray-casting (Möller–Trumbore)</strong> algorithm — each candidate cell centre is tested against the closed surface to determine whether it lies inside a building, tree canopy, or open-air region.
+                </p>
+                <div class="cfd-video-full">
+                    <video autoplay loop muted playsinline class="cfd-video-player">
+                        <source src="/video/cfd/extraction_for_website.mp4" type="video/mp4">
+                    </video>
+                    <p class="cfd-video-caption">Extraction of urban geometry from geospatial sources for CFD grid population</p>
+                </div>
+            </section>
+
+            <!-- Flow & Temperature Results Section -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">CFD Simulation Results</h2>
+                <p class="cfd-section-desc">
+                    The solver uses <strong>first-order upwind advection</strong>, <strong>second-order central-difference diffusion</strong>, and an <strong>artificial compressibility pressure-correction</strong> method (Chorin 1967). Time-stepping is dynamically controlled via both advection and diffusion CFL conditions. The visualizations below show wind flow patterns (arrow field) and temperature distribution across the urban domain.
+                </p>
+                <div class="cfd-video-pair">
+                    <div class="cfd-video-pair-item">
+                        <video autoplay loop muted playsinline class="cfd-video-player">
+                            <source src="/video/cfd/arrow.mp4" type="video/mp4">
+                        </video>
+                        <p class="cfd-video-caption">Wind velocity vector field — Arrow plot of the 3D flow solution</p>
+                    </div>
+                    <div class="cfd-video-pair-item">
+                        <video autoplay loop muted playsinline class="cfd-video-player">
+                            <source src="/video/cfd/temp.mp4" type="video/mp4">
+                        </video>
+                        <p class="cfd-video-caption">Temperature distribution — Boussinesq buoyancy-driven thermal field</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LiDAR Voxel Section -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">LiDAR Geometry Extraction Using Voxels</h2>
+                <p class="cfd-section-desc">
+                    High-density <strong>LiDAR point clouds</strong> are processed and voxelized to reconstruct 3D urban geometry at high fidelity. Each point cloud is binned into the CFD voxel grid, enabling accurate representation of building façades, vegetation canopies, and terrain undulations. The voxelized geometry directly drives the flag arrays (<code>FLAG_SOLID</code>, <code>FLAG_TREE</code>, <code>FLAG_GROUND</code>) used by the solver's boundary condition and drag routines.
+                </p>
+                <div class="cfd-video-full">
+                    <video autoplay loop muted playsinline class="cfd-video-player">
+                        <source src="/video/cfd/voxel_for_website.mp4" type="video/mp4">
+                    </video>
+                    <p class="cfd-video-caption">LiDAR point cloud voxelization — 3D urban geometry reconstruction for CFD grid</p>
+                </div>
+            </section>
+
+            <!-- DEM Section -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">3D Digital Elevation Model (DEM)</h2>
+                <p class="cfd-section-desc">
+                    A <strong>Digital Elevation Model (DEM)</strong> is derived from the LiDAR data and terrain datasets to represent the ground surface topology of the simulation domain. The DEM is used to set the lower boundary condition of the CFD grid, ensuring that the computational domain accurately conforms to the real terrain — critical for correct wind channeling, drainage modeling, and thermal stratification near the ground.
+                </p>
+                <div class="cfd-video-full">
+                    <video autoplay loop muted playsinline class="cfd-video-player">
+                        <source src="/video/cfd/dem_for_website.mp4" type="video/mp4">
+                    </video>
+                    <p class="cfd-video-caption">3D Digital Elevation Model — terrain surface used as the lower CFD boundary</p>
+                </div>
+            </section>
+
+            <!-- Technical Details -->
+            <section style="margin-bottom: var(--space-10);">
+                <h2 class="cfd-section-heading">Solver Technical Summary</h2>
+                <div class="cfd-tech-grid">
+                    <div class="cfd-tech-card">
+                        <h3><i class="fas fa-calculator"></i> Governing Equations</h3>
+                        <ul>
+                            <li>3D incompressible Navier–Stokes (Boussinesq)</li>
+                            <li>Scalar temperature advection–diffusion</li>
+                            <li>Porous-media canopy drag: <em>F<sub>d</sub> = −C<sub>d</sub>|U|U</em></li>
+                            <li>Evaporative cooling in tree cells</li>
+                        </ul>
+                    </div>
+                    <div class="cfd-tech-card">
+                        <h3><i class="fas fa-code"></i> Numerical Schemes</h3>
+                        <ul>
+                            <li>Time: Explicit (Forward) Euler</li>
+                            <li>Advection: 1st-order upwind</li>
+                            <li>Diffusion: 2nd-order central differences (non-uniform grid)</li>
+                            <li>Pressure: Artificial compressibility (Chorin 1967)</li>
+                        </ul>
+                    </div>
+                    <div class="cfd-tech-card">
+                        <h3><i class="fas fa-border-all"></i> Grid &amp; Geometry</h3>
+                        <ul>
+                            <li>Regular or stretched Cartesian grid</li>
+                            <li>z-major array storage (N<sub>z</sub>, N<sub>y</sub>, N<sub>x</sub>)</li>
+                            <li>STL voxelization via Möller–Trumbore ray casting</li>
+                            <li>LiDAR-derived geometry and DEM terrain</li>
+                        </ul>
+                    </div>
+                    <div class="cfd-tech-card">
+                        <h3><i class="fas fa-sun"></i> Physics Models</h3>
+                        <ul>
+                            <li>Log-law atmospheric wind profile inlet BC</li>
+                            <li>Column-based solar shading (1D top-down)</li>
+                            <li>Sensor nudging assimilation (α<sub>s</sub> = 0.5)</li>
+                            <li>CFL-adaptive time-stepping</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-envelope"></i> sharifia@purdue.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Purdue University</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Academic Profiles</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abbas-sharifi/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Abbas-Sharifi?ev=hdr_xprf" target="_blank" rel="noopener">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/O-8093-2016" target="_blank" rel="noopener">
+                            <i class="fas fa-flask"></i> Web of Science
+                        </a>
+                        <a href="https://github.com/AbbasSharifi16" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <p>Water Resource Engineering</p>
+                    <p>Environmental Science</p>
+                    <p>Biomedical Engineering</p>
+                    <p>Computational Fluid Dynamics</p>
+                    <p>Signal Processing</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abbas Sharifi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+
+    <style>
+        /* CFD Digital Twin Page Styles */
+        .cfd-section-heading {
+            font-family: var(--font-family-secondary);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-2);
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .cfd-section-desc {
+            color: var(--text-secondary);
+            font-size: var(--text-base);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+            max-width: 900px;
+        }
+
+        .cfd-overview-card {
+            background: var(--background-secondary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cfd-overview-text {
+            color: var(--text-primary);
+            font-size: var(--text-base);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+
+        .cfd-overview-text code {
+            background: rgba(25, 118, 210, 0.1);
+            color: var(--primary-color);
+            padding: 0.1em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .cfd-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .cfd-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            background: var(--background-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .cfd-feature-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .cfd-feature-item span {
+            color: var(--text-primary);
+            font-size: var(--text-sm);
+            line-height: 1.5;
+        }
+
+        .cfd-video-full {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: #000;
+        }
+
+        .cfd-video-player {
+            width: 100%;
+            display: block;
+            max-height: 600px;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .cfd-video-caption {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            padding: var(--space-3) var(--space-4);
+            background: var(--background-secondary);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .cfd-video-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+        }
+
+        .cfd-video-pair-item {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: #000;
+        }
+
+        .cfd-video-pair-item .cfd-video-player {
+            max-height: 400px;
+        }
+
+        .cfd-tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .cfd-tech-card {
+            background: var(--background-secondary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .cfd-tech-card h3 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .cfd-tech-card h3 i {
+            color: var(--primary-color);
+        }
+
+        .cfd-tech-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cfd-tech-card ul li {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid var(--border-color);
+            line-height: 1.5;
+        }
+
+        .cfd-tech-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .cfd-video-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .cfd-feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cfd-tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

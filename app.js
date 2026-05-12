@@ -62,6 +62,15 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/research/cfd-digital-twin', (req, res) => {
+  const metrics = getCachedMetrics();
+  res.render('cfd-digital-twin', { 
+    title: 'GDSL Digital Twin (CFD) - Abbas Sharifi',
+    page: 'research',
+    scholarMetrics: metrics
+  });
+});
+
 app.get('/research', (req, res) => {
   const metrics = getCachedMetrics();
   res.render('research', { 

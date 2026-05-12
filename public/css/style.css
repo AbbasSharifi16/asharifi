@@ -186,6 +186,38 @@ body {
   font-size: 14px;
 }
 
+.nav-separator {
+  color: var(--border-color);
+  font-weight: 300;
+  margin: 0 var(--space-1);
+  user-select: none;
+}
+
+.nav-link-positions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #D97706 !important;
+  background: #FEF3C7;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: inherit;
+}
+
+.nav-link-positions:hover {
+  background: #D97706;
+  color: white !important;
+}
+
+.nav-link-positions:focus {
+  outline: 2px solid #D97706;
+  outline-offset: 2px;
+}
+
+.nav-link-positions i {
+  font-size: 14px;
+}
+
 /* Dropdown Navigation */
 .nav-dropdown {
   position: relative;
