@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,10 +27,11 @@
     <!-- Main Content -->
     <main>
         <!-- Research Hero -->
-        <section class="research-hero">
+        <section class="research-hero hero-banner" style="--hero-banner-image: url('/img/geyser_banner.jpg'); --hero-banner-position: center 62%;">
+            <div class="hero-banner-media" aria-hidden="true"></div>
             <div class="container">
                 <div class="research-hero-content">
-                    <h1 class="research-title">Research & Innovation</h1>
+                    <h1 class="research-title">Storm Sewer Geyser Research</h1>
                     <p class="research-subtitle">
                         Advancing Water Resource Engineering through Experimental Studies and Computational Modeling
                     </p>
@@ -488,65 +489,12 @@
 <style>
 /* Research Page Specific Styles */
 .research-hero {
-    background: linear-gradient(135deg, 
-        #1a237e 0%, 
-        #0d47a1 25%, 
-        #1976d2 50%, 
-        #0d47a1 75%, 
-        #1a237e 100%);
-    background-size: 400% 400%;
-    animation: fluidFlow 15s ease infinite;
-    color: white;
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--divider-color);
+    color: var(--text-primary);
     padding: var(--space-12) 0 var(--space-10);
-    margin-top: 70px;
+    margin-top: 64px;
     position: relative;
-    overflow: hidden;
-}
-
-.research-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
-    animation: flowPattern 20s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes fluidFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes flowPattern {
-    0%, 100% {
-        transform: translateX(0) translateY(0);
-        opacity: 0.3;
-    }
-    25% {
-        transform: translateX(-10%) translateY(-5%);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateX(-20%) translateY(0);
-        opacity: 0.3;
-    }
-    75% {
-        transform: translateX(-10%) translateY(5%);
-        opacity: 0.5;
-    }
 }
 
 .research-hero-content {
@@ -557,19 +505,19 @@
     z-index: 1;
 }
 
+
 .research-title {
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family-primary);
     font-size: var(--text-4xl);
     font-weight: 700;
     margin-bottom: var(--space-4);
-    color: white;
+    color: var(--text-primary);
 }
 
 .research-subtitle {
     font-size: var(--text-base);
-    opacity: 0.9;
     line-height: 1.6;
-    color: white;
+    color: var(--text-secondary);
 }
 
 .main-research {
@@ -1103,7 +1051,6 @@
                 <div class="footer-section">
                     <h4>Contact Information</h4>
                     <p><i class="fas fa-envelope"></i> sharifia@purdue.edu</p>
-                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
                     <p><i class="fas fa-map-marker-alt"></i> Purdue University</p>
                 </div>
                 

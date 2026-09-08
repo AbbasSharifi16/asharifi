@@ -2,6 +2,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="nav-logo">
+                <span class="logo-text">Abbas Sharifi, Ph.D.</span>
             </a>
 
             <div class="nav-menu" id="nav-menu">
@@ -9,8 +10,8 @@
                 <div class="nav-dropdown">
                     <a class="nav-link <%= typeof page !== 'undefined' && page === 'research' ? 'active' : '' %>">Research <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="/research/cfd-digital-twin">GDSL Digital Twin (CFD)</a>
                         <a href="/research">Storm Sewer Geyser Simulation</a>
+                        <a href="/research/cfd-digital-twin">GDSL Digital Twin (CFD)</a>
                         <a href="/research/seawater-robot">Sea Water Robot</a>
                         <a href="/research/magnetic-drug-targeting">Magnetic Drug Targeting</a>
                         <a href="/research/medical-image-processing">Medical Image Processing</a>
@@ -21,15 +22,15 @@
                 <a href="/teaching" class="nav-link <%= typeof page !== 'undefined' && page === 'teaching' ? 'active' : '' %>">Teaching</a>
                 <a href="/gallery" class="nav-link <%= typeof page !== 'undefined' && page === 'gallery' ? 'active' : '' %>">Gallery</a>
                 <a href="/contact" class="nav-link <%= typeof page !== 'undefined' && page === 'contact' ? 'active' : '' %>">Contact</a>
-                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                <span class="nav-separator">|</span>
+                <a href="https://scholar.google.com/citations?user=OChapXkAAAAJ" class="nav-link-external" target="_blank" rel="noopener">
                     <i class="fas fa-graduation-cap"></i> Scholar
                 </a>
-                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link nav-link-external" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/in/abbas-sharifi/" class="nav-link-external" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <span class="nav-separator">|</span>
-                <a href="https://positionhire.com/projects" class="nav-link nav-link-positions" target="_blank" rel="noopener">
-                    <i class="fas fa-graduation-cap"></i> positionhire
+                <a href="/cv/Abbas_Sharifi_CV.pdf" class="nav-link-cv" target="_blank" rel="noopener">
+                    <i class="fas fa-file-pdf"></i> CV
                 </a>
             </div>
 

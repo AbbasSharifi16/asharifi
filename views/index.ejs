@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,29 +31,120 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="greeting">Hello, I'm</span>
-                    <span class="name">Abbas Sharifi</span>
+                    <span class="name">Abbas Sharifi, Ph.D.</span>
                 </h1>
-                <h2 class="hero-subtitle">PhD in Civil Engineering</h2>
+                <h2 class="hero-subtitle">Postdoctoral Associate, Purdue University, West Lafayette &mdash; Since Mar 2026</h2>
+                <ul class="hero-education">
+                    <li>PhD, Civil Engineering, Florida International University, Miami, 2022&ndash;2025</li>
+                    <li>MS, Environmental Engineering, Florida International University, Miami, 2022&ndash;2024</li>
+                    <li>MS, Mechanical Engineering, Urmia University of Technology, Urmia, 2014&ndash;2016</li>
+                    <li>BS, Mechanical Engineering, Urmia University, Urmia, 2010&ndash;2014</li>
+                </ul>
+                <p class="greeting">Water Resource Engineering &middot; Computational Fluid Dynamics &middot; Biomedical Engineering</p>
                 <p class="hero-description">
-                    Researcher with expertise in Water Resource Engineering, Environmental Science, and Biomedical Engineering. 
-                    Specializing in computational fluid dynamics, machine learning, and advanced modeling for complex engineering challenges.
+                    We develop experimental and computational models &mdash; combining CFD, machine learning, and hardware
+                    prototyping &mdash; to solve applied problems in stormwater infrastructure, biomedical fluid dynamics,
+                    and environmental systems.
                 </p>
-                
-                
+
                 <div class="hero-buttons">
-                    <a href="/research" class="btn btn-primary">View Research</a>
-                    <a href="/cv/cv.pdf" class="btn btn-secondary" download>
-                        Download CV
-                    </a>
-                    <a href="/contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="/research/cfd-digital-twin" class="btn btn-primary">View Research</a>
+                    <a href="/contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
-            
+
             <div class="hero-image">
                 <img src="/img/profile.jpg" alt="Abbas Sharifi" class="profile-image">
                 <div class="image-decoration"></div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Projects Showcase -->
+<section class="projects-showcase">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Research Projects</h2>
+            <p class="section-subtitle">A selection of current and past projects spanning water resource engineering, biomedical fluid dynamics, and applied machine learning.</p>
+        </div>
+
+        <div class="projects-grid">
+            <a href="/research" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">PhD Dissertation</span>
+                    <video autoplay loop muted playsinline>
+                        <source src="/video/geyser_video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-card-body">
+                    <h3>Storm Sewer Geyser Simulation</h3>
+                    <p>Experimental and 3D numerical (OpenFOAM) modeling of violent air&ndash;water eruptions in urban drainage systems, with retrofitting solutions for existing infrastructure.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/research/cfd-digital-twin" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">Digital Twin</span>
+                    <video autoplay loop muted playsinline>
+                        <source src="/video/cfd/map_for_website.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-card-body">
+                    <h3>GDSL Digital Twin (CFD)</h3>
+                    <p>AI-driven digital twin and CFD modeling framework for managing and predicting the behavior of stormwater drainage infrastructure.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/research/seawater-robot" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">EPA Project</span>
+                    <img src="/img/robot_project_overview.png" alt="Autonomous surface water trash-collecting robot">
+                </div>
+                <div class="project-card-body">
+                    <h3>Sea Water Robot</h3>
+                    <p>Design and prototyping of an autonomous floating robot for surface water trash collection, developed as Co-PI on an EPA-funded project.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/research/magnetic-drug-targeting" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">Biomedical</span>
+                    <img src="/img/magnet1.jpg" alt="Magnetic drug targeting simulation">
+                </div>
+                <div class="project-card-body">
+                    <h3>Magnetic Drug Targeting</h3>
+                    <p>CFD modeling of magnetic nanoparticle transport in blood vessels for targeted drug delivery, using biomagnetic fluid dynamics.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/research/medical-image-processing" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">Deep Learning</span>
+                    <img src="/img/segmentation.jpg" alt="Medical image segmentation using deep learning">
+                </div>
+                <div class="project-card-body">
+                    <h3>Medical Image Processing</h3>
+                    <p>CNN-based segmentation and classification for brain lesion detection and diagnostic imaging applications.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/research/covid-research" class="project-card">
+                <div class="project-card-media">
+                    <span class="project-card-tag">Environmental ML</span>
+                    <img src="/img/pandemics2.png" alt="COVID-19 climatological research">
+                </div>
+                <div class="project-card-body">
+                    <h3>COVID-19 &amp; Climatology</h3>
+                    <p>Machine learning models investigating climatological influences on COVID-19 outbreak dynamics across regions.</p>
+                    <span class="project-card-link">View Project &rarr;</span>
+                </div>
+            </a>
         </div>
     </div>
 </section>
@@ -457,6 +548,46 @@ In addition to my research, I am actively involved in the academic community. I 
     </div>
 </section>
 
+<!-- Selected Publications -->
+<section class="recent-publications">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Selected Publications</h2>
+            <p class="section-subtitle">See the <a href="/publications" style="color: var(--primary-color);">full publication list</a> for all <%= scholarMetrics && scholarMetrics.publications ? scholarMetrics.publications : '36' %> papers.</p>
+        </div>
+
+        <div class="pub-teaser-list">
+            <div class="pub-teaser-item">
+                <span class="pub-teaser-year">2026</span>
+                <div>
+                    <h4>A retrofitting solution for geyser eruptions in storm sewer systems: experimental and numerical analysis</h4>
+                    <p><strong>Sharifi, A.</strong>, Mahyawansi, P., Zanje, S. R., &amp; Leon, A. S. &mdash; <span class="journal">Journal of Hydraulic Research, 1-17</span></p>
+                </div>
+            </div>
+
+            <div class="pub-teaser-item">
+                <span class="pub-teaser-year">2025</span>
+                <div>
+                    <h4>Dynamics of cyclic and violent geyser eruptions in storm sewer systems: an experimental and numerical approach</h4>
+                    <p><strong>Sharifi, A.</strong>, Mahyawansi, P., Zanje, S. R., &amp; Leon, A. S. &mdash; <span class="journal">Journal of Hydraulic Research, 63(5), 558-577</span></p>
+                </div>
+            </div>
+
+            <div class="pub-teaser-item">
+                <span class="pub-teaser-year">2025</span>
+                <div>
+                    <h4>Real-Time Air&ndash;Water Volume Fraction Prediction Using Deep Learning and High-Speed Imaging</h4>
+                    <p><strong>Sharifi, A.</strong>, Zanje, S. R., Mahyawansi, P., Petrov, V., &amp; Leon, A. S. &mdash; <span class="journal">World Environmental and Water Resources Congress 2025 (pp. 471-485)</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <a href="/publications" class="btn btn-outline">View All Publications</a>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
@@ -466,7 +597,6 @@ In addition to my research, I am actively involved in the academic community. I 
                 <div class="footer-section">
                     <h4>Contact Information</h4>
                     <p><i class="fas fa-envelope"></i> sharifia@purdue.edu</p>
-                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
                     <p><i class="fas fa-map-marker-alt"></i> Purdue University</p>
                 </div>
                 

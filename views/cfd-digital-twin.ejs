@@ -8,17 +8,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="GDSL Digital Twin - 3D Urban Microclimate CFD Simulation with LiDAR Geometry Extraction and Sensor Data Assimilation">
-    <meta name="keywords" content="CFD, Digital Twin, Urban Microclimate, LiDAR, Voxelization, DEM, Cesium, Navier-Stokes, Boussinesq">
+    <meta name="description" content="Multi-Scale Urban Climate Modeling and a Cloud-Based Microclimate Digital Twin for Heat Exposure and Adaptive Planning">
+    <meta name="keywords" content="CFD, Digital Twin, Urban Microclimate, Urban Heat Island, LiDAR, Voxelization, DEM, Cesium, WRF, Heat Exposure">
     <meta name="author" content="Abbas Sharifi">
 </head>
 <body>
@@ -27,173 +27,112 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="research-hero">
+        <section class="research-hero hero-banner" style="--hero-banner-image: url('/img/gdsl_banner.jpg'); --hero-banner-position: center right;">
+            <div class="hero-banner-media" aria-hidden="true"></div>
             <div class="container">
                 <div class="research-hero-content">
                     <h1 class="research-title">GDSL Digital Twin</h1>
                     <p class="research-subtitle">
-                        3D Urban Microclimate CFD Simulation with Real-Time Sensor Assimilation, LiDAR Geometry Extraction, and Cesium-Based Mapping
+                        Multi-Scale Urban Climate Modeling and a Cloud-Based Microclimate Digital Twin for Heat Exposure and Adaptive Planning
                     </p>
                 </div>
             </div>
         </section>
 
-        <div class="container" style="padding: var(--space-8) var(--space-4) var(--space-16);">
+        <div class="container paper-container" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
 
-            <!-- Project Overview -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">Project Overview</h2>
-                <div class="cfd-overview-card">
-                    <p class="cfd-overview-text">
-                        The <strong>GDSL Digital Twin</strong> is a high-fidelity urban microclimate simulation framework built around a custom 3D CFD solver (<code>microclimate_solver.py</code>). It solves the incompressible Navier–Stokes equations under the <strong>Boussinesq approximation</strong> on a regular (optionally stretched) Cartesian grid, coupled with scalar temperature advection–diffusion, a porous-media canopy model, a simplified solar-radiation source, and real-time sensor data assimilation.
+            <!-- Opening statement -->
+            <div class="stmt-lede">
+                <p>
+                    Extreme heat is the deadliest climate hazard in the United States, and its burden falls unevenly. Within a single city, air and surface temperatures can differ by more than 5&nbsp;&deg;C between a tree-lined residential street and an adjacent industrial corridor, and those differences track historical patterns of disinvestment. The available tools are mismatched to the problem: mesoscale weather models resolve kilometers, while the difference between a shaded street and an exposed one is tens of meters, and satellite thermal imagery shows where a city is hot but cannot evaluate a tree that has not yet been planted. My work builds the machinery that connects the physics to the decision.
+                </p>
+            </div>
+
+            <!-- The GDSL Digital Twin -->
+            <section class="paper-section">
+                <h2>The GDSL Digital Twin</h2>
+                <div class="paper-subsection">
+                    <p>
+                        At Purdue&rsquo;s Geospatial Data Science Laboratory, I lead development of an operational, cloud-based urban microclimate digital twin. It delivers physically based simulation to any web browser, for anywhere on Earth, without the user preparing a mesh or accessing a cluster. A user selects a neighborhood on an interactive 3D globe rendered with CesiumJS; the system assembles a physical description of that place from open geospatial data and returns street-scale temperature, wind, and thermal comfort fields.
                     </p>
-                    <div class="cfd-feature-grid">
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-wind"></i>
-                            <span>3D incompressible Navier–Stokes + Boussinesq buoyancy</span>
-                        </div>
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-thermometer-half"></i>
-                            <span>Coupled temperature advection–diffusion with solar heating</span>
-                        </div>
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-tree"></i>
-                            <span>Porous-media canopy drag &amp; evaporative cooling</span>
-                        </div>
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-satellite-dish"></i>
-                            <span>Live sensor data assimilation (nudging scheme)</span>
-                        </div>
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-cube"></i>
-                            <span>STL voxelization of buildings, trees &amp; terrain</span>
-                        </div>
-                        <div class="cfd-feature-item">
-                            <i class="fas fa-map"></i>
-                            <span>Cesium-based geospatial domain mapping</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Cesium Map Section -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">Cesium Geospatial Domain Map</h2>
-                <p class="cfd-section-desc">
-                    The simulation domain is georeferenced using <strong>CesiumJS</strong>, enabling real-world coordinate alignment of the CFD grid with building footprints, terrain elevation, and sensor locations. The map interface allows interactive selection and inspection of the computational domain before running the solver.
-                </p>
-                <div class="cfd-video-full">
-                    <video autoplay loop muted playsinline class="cfd-video-player">
-                        <source src="/video/cfd/map_for_website.mp4" type="video/mp4">
-                    </video>
-                    <p class="cfd-video-caption">CesiumJS-based geospatial map used to define and visualize the CFD simulation domain</p>
-                </div>
-            </section>
-
-            <!-- Geometry Extraction Section -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">Urban Geometry Extraction</h2>
-                <p class="cfd-section-desc">
-                    Building geometries, street networks, and terrain surfaces are extracted from geospatial data sources and converted to STL meshes. These meshes are then voxelized onto the Cartesian CFD grid using a <strong>parity ray-casting (Möller–Trumbore)</strong> algorithm — each candidate cell centre is tested against the closed surface to determine whether it lies inside a building, tree canopy, or open-air region.
-                </p>
-                <div class="cfd-video-full">
-                    <video autoplay loop muted playsinline class="cfd-video-player">
-                        <source src="/video/cfd/extraction_for_website.mp4" type="video/mp4">
-                    </video>
-                    <p class="cfd-video-caption">Extraction of urban geometry from geospatial sources for CFD grid population</p>
-                </div>
-            </section>
-
-            <!-- Flow & Temperature Results Section -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">CFD Simulation Results</h2>
-                <p class="cfd-section-desc">
-                    The solver uses <strong>first-order upwind advection</strong>, <strong>second-order central-difference diffusion</strong>, and an <strong>artificial compressibility pressure-correction</strong> method (Chorin 1967). Time-stepping is dynamically controlled via both advection and diffusion CFL conditions. The visualizations below show wind flow patterns (arrow field) and temperature distribution across the urban domain.
-                </p>
-                <div class="cfd-video-pair">
-                    <div class="cfd-video-pair-item">
-                        <video autoplay loop muted playsinline class="cfd-video-player">
-                            <source src="/video/cfd/arrow.mp4" type="video/mp4">
+                    <figure class="paper-figure">
+                        <video autoplay loop muted playsinline>
+                            <source src="/video/cfd/map_for_website.mp4" type="video/mp4">
                         </video>
-                        <p class="cfd-video-caption">Wind velocity vector field — Arrow plot of the 3D flow solution</p>
-                    </div>
-                    <div class="cfd-video-pair-item">
-                        <video autoplay loop muted playsinline class="cfd-video-player">
-                            <source src="/video/cfd/temp.mp4" type="video/mp4">
+                        <figcaption class="paper-figure-caption">Interactive 3D globe used to select a neighborhood and define the simulation domain, built on CesiumJS.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- The physics engine -->
+            <section class="paper-section">
+                <h2>A GPU-Accelerated Physics Engine</h2>
+                <div class="paper-subsection">
+                    <p>
+                        The solver integrates the three-dimensional incompressible Navier&ndash;Stokes equations under the Boussinesq approximation, coupled to a temperature advection&ndash;diffusion equation, on GPU hardware via CuPy with an HPC backend. Urban-specific process models represent vegetation canopy drag and evapotranspirative cooling, solar shading resolved through the day, and the surface energy balance of contrasting materials. Live observations from urban sensor networks are assimilated into the simulation state through relaxation nudging, so the twin remains anchored to the real atmosphere rather than drifting into free-running simulation. Output is expressed in the quantities decisions turn on: pedestrian-level wind, thermal comfort, neighborhood heat island intensity, and the marginal cooling benefit of a proposed intervention.
+                    </p>
+                    <figure class="paper-figure">
+                        <video autoplay loop muted playsinline>
+                            <source src="/video/cfd/runCFD_DT_on_map.mp4" type="video/mp4">
                         </video>
-                        <p class="cfd-video-caption">Temperature distribution — Boussinesq buoyancy-driven thermal field</p>
+                        <figcaption class="paper-figure-caption">CFD simulation running on the map, respecting surface elevation and objects such as trees, cars, and roads.</figcaption>
+                    </figure>
+                    <div class="paper-figure-pair">
+                        <figure class="paper-figure">
+                            <video autoplay loop muted playsinline>
+                                <source src="/video/cfd/arrow.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="paper-figure-caption">Pedestrian-level wind field computed by the solver, showing channeling between buildings and wake regions.</figcaption>
+                        </figure>
+                        <figure class="paper-figure">
+                            <video autoplay loop muted playsinline>
+                                <source src="/video/cfd/temp.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="paper-figure-caption">Corresponding temperature field, showing buoyancy-driven heating over built surfaces and cooling beneath tree canopy.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
 
-            <!-- LiDAR Voxel Section -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">LiDAR Geometry Extraction Using Voxels</h2>
-                <p class="cfd-section-desc">
-                    High-density <strong>LiDAR point clouds</strong> are processed and voxelized to reconstruct 3D urban geometry at high fidelity. Each point cloud is binned into the CFD voxel grid, enabling accurate representation of building façades, vegetation canopies, and terrain undulations. The voxelized geometry directly drives the flag arrays (<code>FLAG_SOLID</code>, <code>FLAG_TREE</code>, <code>FLAG_GROUND</code>) used by the solver's boundary condition and drag routines.
-                </p>
-                <div class="cfd-video-full">
-                    <video autoplay loop muted playsinline class="cfd-video-player">
-                        <source src="/video/cfd/voxel_for_website.mp4" type="video/mp4">
-                    </video>
-                    <p class="cfd-video-caption">LiDAR point cloud voxelization — 3D urban geometry reconstruction for CFD grid</p>
+            <!-- Reconstructing urban form -->
+            <section class="paper-section">
+                <h2>Reconstructing Urban Form from Open Geospatial Data</h2>
+                <div class="paper-subsection">
+                    <p>
+                        Behind every simulation is an automated geospatial pipeline. It streams airborne LiDAR point clouds on demand through STAC-API catalogs and Entwine Point Tile indexing, crops them to the selected domain, and applies AI semantic segmentation to classify ground, building, and vegetation returns. Segment Anything Model (SAM) object detection is applied to imagery to locate individual objects in the scene, including trees, vehicles, and building elements, and their positions are carried into the simulation geometry. From these sources the pipeline reconstructs a digital elevation model, building footprints and heights, and a three-dimensional tree-canopy representation, fused with OpenStreetMap building, road, canopy, and hydrography layers. This automates the step that has historically made building-resolved urban climate modeling too labor-intensive for routine use.
+                    </p>
+                    <figure class="paper-figure">
+                        <video autoplay loop muted playsinline>
+                            <source src="/video/cfd/voxel_for_website.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="paper-figure-caption">Airborne LiDAR point clouds classified and voxelized into a three-dimensional representation of buildings and tree canopy.</figcaption>
+                    </figure>
+                    <figure class="paper-figure">
+                        <video autoplay loop muted playsinline>
+                            <source src="/video/cfd/dem_for_website.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="paper-figure-caption">Digital elevation model reconstructed from LiDAR to represent ground-surface topology.</figcaption>
+                    </figure>
                 </div>
             </section>
 
-            <!-- DEM Section -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">3D Digital Elevation Model (DEM)</h2>
-                <p class="cfd-section-desc">
-                    A <strong>Digital Elevation Model (DEM)</strong> is derived from the LiDAR data and terrain datasets to represent the ground surface topology of the simulation domain. The DEM is used to set the lower boundary condition of the CFD grid, ensuring that the computational domain accurately conforms to the real terrain — critical for correct wind channeling, drainage modeling, and thermal stratification near the ground.
-                </p>
-                <div class="cfd-video-full">
-                    <video autoplay loop muted playsinline class="cfd-video-player">
-                        <source src="/video/cfd/dem_for_website.mp4" type="video/mp4">
-                    </video>
-                    <p class="cfd-video-caption">3D Digital Elevation Model — terrain surface used as the lower CFD boundary</p>
+            <!-- Coupling to the regional atmosphere -->
+            <section class="paper-section">
+                <h2>Coupling to the Regional Atmosphere</h2>
+                <div class="paper-subsection">
+                    <p>
+                        A street-level simulation is only as good as its boundary conditions, which are set by synoptic weather and boundary-layer evolution that no neighborhood domain can resolve on its own. I am coupling the microscale engine to mesoscale WRF modeling so that a single framework spans regional circulation down to street-canyon radiative exchange, shading, and roughness. This is what allows one system to answer both what a block will feel like tomorrow afternoon and what it will feel like under mid-century warming.
+                    </p>
                 </div>
             </section>
 
-            <!-- Technical Details -->
-            <section style="margin-bottom: var(--space-10);">
-                <h2 class="cfd-section-heading">Solver Technical Summary</h2>
-                <div class="cfd-tech-grid">
-                    <div class="cfd-tech-card">
-                        <h3><i class="fas fa-calculator"></i> Governing Equations</h3>
-                        <ul>
-                            <li>3D incompressible Navier–Stokes (Boussinesq)</li>
-                            <li>Scalar temperature advection–diffusion</li>
-                            <li>Porous-media canopy drag: <em>F<sub>d</sub> = −C<sub>d</sub>|U|U</em></li>
-                            <li>Evaporative cooling in tree cells</li>
-                        </ul>
-                    </div>
-                    <div class="cfd-tech-card">
-                        <h3><i class="fas fa-code"></i> Numerical Schemes</h3>
-                        <ul>
-                            <li>Time: Explicit (Forward) Euler</li>
-                            <li>Advection: 1st-order upwind</li>
-                            <li>Diffusion: 2nd-order central differences (non-uniform grid)</li>
-                            <li>Pressure: Artificial compressibility (Chorin 1967)</li>
-                        </ul>
-                    </div>
-                    <div class="cfd-tech-card">
-                        <h3><i class="fas fa-border-all"></i> Grid &amp; Geometry</h3>
-                        <ul>
-                            <li>Regular or stretched Cartesian grid</li>
-                            <li>z-major array storage (N<sub>z</sub>, N<sub>y</sub>, N<sub>x</sub>)</li>
-                            <li>STL voxelization via Möller–Trumbore ray casting</li>
-                            <li>LiDAR-derived geometry and DEM terrain</li>
-                        </ul>
-                    </div>
-                    <div class="cfd-tech-card">
-                        <h3><i class="fas fa-sun"></i> Physics Models</h3>
-                        <ul>
-                            <li>Log-law atmospheric wind profile inlet BC</li>
-                            <li>Column-based solar shading (1D top-down)</li>
-                            <li>Sensor nudging assimilation (α<sub>s</sub> = 0.5)</li>
-                            <li>CFL-adaptive time-stepping</li>
-                        </ul>
-                    </div>
+            <!-- From demonstration to research program -->
+            <section class="paper-section">
+                <h2>From Demonstration to Research Program</h2>
+                <div class="paper-subsection">
+                    <p>
+                        The platform is not tied to a single test site: it runs for any location on Earth, assembling the domain from open geospatial data wherever coverage exists, and demonstrations such as Hamilton County, Indiana, establish the full chain from public LiDAR to browser-rendered microclimate fields. I am extending it along three lines: systematic validation against distributed sensor networks and vehicle-mounted mobile transects, to map not only predictive skill but where the model fails and why; coupling microclimate fields with population, mobility, and health data, to move from mapping heat to estimating who is exposed; and co-production with municipal planning departments, public-health agencies, and community organizations. Because the twin runs in a browser, it can be placed directly in residents&rsquo; hands at a public meeting rather than delivered as a consultancy report.
+                    </p>
                 </div>
             </section>
 
@@ -207,7 +146,6 @@
                 <div class="footer-section">
                     <h4>Contact Information</h4>
                     <p><i class="fas fa-envelope"></i> sharifia@purdue.edu</p>
-                    <p><i class="fas fa-phone"></i> +1 (786) 777-9957</p>
                     <p><i class="fas fa-map-marker-alt"></i> Purdue University</p>
                 </div>
                 
@@ -253,176 +191,104 @@
     <script src="/js/main.js"></script>
 
     <style>
-        /* CFD Digital Twin Page Styles */
-        .cfd-section-heading {
-            font-family: var(--font-family-secondary);
-            font-size: var(--text-2xl);
+        /* GDSL Digital Twin — research-statement layout */
+        /* Content column spans the same width as the hero container, so its left
+           and right edges line up with the hero on both sides. */
+        .paper-container {
+            max-width: 1200px;
+        }
+
+        /* Opening statement */
+        .stmt-lede {
+            margin-bottom: var(--space-10);
+            padding-bottom: var(--space-8);
+            border-bottom: 1px solid var(--divider-color);
+        }
+
+        .stmt-lede p {
+            font-size: var(--text-lg);
+            line-height: 1.75;
+            color: var(--text-primary);
+        }
+
+        /* Sections (unnumbered, first-person narrative).
+           Overrides the global `section { padding: var(--space-16) 0 }` so the
+           gap between sections is a single, consistent step. */
+        .paper-section {
+            padding: 0;
+            margin-bottom: var(--space-8);
+        }
+
+        .paper-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .paper-section h2 {
+            font-size: var(--text-xl);
             font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: var(--space-4);
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
             padding-bottom: var(--space-2);
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
+            border-bottom: 2px solid var(--text-primary);
         }
 
-        .cfd-section-desc {
-            color: var(--text-secondary);
+        .paper-subsection h3 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-8) 0 var(--space-3);
+        }
+
+        .paper-subsection:first-of-type h3 {
+            margin-top: 0;
+        }
+
+        .paper-subsection p {
             font-size: var(--text-base);
             line-height: 1.8;
-            margin-bottom: var(--space-6);
-            max-width: 900px;
+            color: var(--text-primary);
+            text-align: justify;
+            margin-bottom: var(--space-4);
         }
 
-        .cfd-overview-card {
+        .paper-subsection code {
             background: var(--background-secondary);
-            border-radius: var(--radius-xl);
-            padding: var(--space-8);
-            box-shadow: var(--shadow-md);
-        }
-
-        .cfd-overview-text {
-            color: var(--text-primary);
-            font-size: var(--text-base);
-            line-height: 1.8;
-            margin-bottom: var(--space-6);
-        }
-
-        .cfd-overview-text code {
-            background: rgba(25, 118, 210, 0.1);
-            color: var(--primary-color);
             padding: 0.1em 0.4em;
-            border-radius: 4px;
+            border-radius: 3px;
             font-size: 0.9em;
-        }
-
-        .cfd-feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-4);
-        }
-
-        .cfd-feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-3);
-            background: var(--background-primary);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .cfd-feature-item i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .cfd-feature-item span {
             color: var(--text-primary);
-            font-size: var(--text-sm);
-            line-height: 1.5;
         }
 
-        .cfd-video-full {
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            background: #000;
+        /* Figures */
+        .paper-figure {
+            margin: var(--space-6) 0 0;
         }
 
-        .cfd-video-player {
+        .paper-figure video,
+        .paper-figure img {
             width: 100%;
             display: block;
-            max-height: 600px;
-            object-fit: contain;
             background: #000;
+            border: 1px solid var(--border-color);
         }
 
-        .cfd-video-caption {
-            text-align: center;
-            color: var(--text-secondary);
+        .paper-figure-caption {
             font-size: var(--text-sm);
-            padding: var(--space-3) var(--space-4);
-            background: var(--background-secondary);
-            margin: 0;
-            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: center;
+            margin-top: var(--space-3);
+            padding: 0 var(--space-2);
         }
 
-        .cfd-video-pair {
+        .paper-figure-pair {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-6);
         }
 
-        .cfd-video-pair-item {
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            background: #000;
-        }
-
-        .cfd-video-pair-item .cfd-video-player {
-            max-height: 400px;
-        }
-
-        .cfd-tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: var(--space-6);
-        }
-
-        .cfd-tech-card {
-            background: var(--background-secondary);
-            border-radius: var(--radius-xl);
-            padding: var(--space-6);
-            box-shadow: var(--shadow-md);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .cfd-tech-card h3 {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-4);
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        .cfd-tech-card h3 i {
-            color: var(--primary-color);
-        }
-
-        .cfd-tech-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .cfd-tech-card ul li {
-            color: var(--text-secondary);
-            font-size: var(--text-sm);
-            padding: var(--space-2) 0;
-            border-bottom: 1px solid var(--border-color);
-            line-height: 1.5;
-        }
-
-        .cfd-tech-card ul li:last-child {
-            border-bottom: none;
-        }
-
         @media (max-width: 768px) {
-            .cfd-video-pair {
-                grid-template-columns: 1fr;
-            }
-
-            .cfd-feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cfd-tech-grid {
+            .paper-figure-pair {
                 grid-template-columns: 1fr;
             }
         }
